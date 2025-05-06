@@ -91,7 +91,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 <div className="relative w-full aspect-[16/10] rounded-t-lg overflow-hidden border-b border-border/30
                                 before:content-[''] before:absolute before:w-full before:h-full before:left-[-25%] before:top-1/2 before:-translate-y-1/2
                                 before:bg-accent/15 before:rounded-full before:blur-3xl before:-z-10 before:opacity-70
-                                group-hover/card:before:opacity-90 group-hover/card:before:scale-110 transition-all duration-500">
+                                group-hover/card:before:opacity-90 group-hover/card:before:scale-110 before:transition-all before:duration-500">
                   <Image
                     src={project.imageUrl}
                     alt={project.imageAlt}
