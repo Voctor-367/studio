@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import type React from 'react';
+import { cn } from '@/lib/utils';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -30,9 +31,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // Apply dark class to html tag for consistent dark mode
-    <html lang="en" className="dark">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased scrollbar-thin bg-black text-gray-100`}>
+    <html lang="en" className={cn("dark", geistSans.variable, geistMono.variable)}>
+      <body className="antialiased scrollbar-thin bg-black text-gray-100">
         {children}
         <Toaster />
       </body>
