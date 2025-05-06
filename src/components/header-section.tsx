@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
-import { Award, Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { ArrowRight, Bot } from 'lucide-react';
 
 const HeaderSection: React.FC = () => {
   const handleScrollToProjects = () => {
@@ -10,47 +11,59 @@ const HeaderSection: React.FC = () => {
   };
 
   return (
-    <header className="min-h-screen flex flex-col justify-center items-center py-16 md:py-24 bg-background relative border-b border-border/20"> {/* Removed background gradient */}
-      <div className="container mx-auto px-4 text-center">
-        <Award className="w-20 h-20 md:w-24 md:h-24 text-accent mx-auto mb-6 animate-bounce" /> {/* Changed icon color to accent */}
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-4 tracking-tight">
-           {/* Applied accent text-glow */}
-          <span className="text-glow-accent">
-            FolioFlow
-          </span>
-        </h1>
-        <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-10">
-          A curated collection of my projects, showcasing skills and passion for building innovative digital solutions.
-        </p>
-        <div className="flex justify-center space-x-4 md:space-x-6 mb-12">
-           {/* Changed social icons hover to accent */}
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent p-2 rounded-full hover:bg-accent/10 transition-all duration-300 transform hover:scale-110">
-            <Github size={30} />
-            <span className="sr-only">GitHub</span>
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent p-2 rounded-full hover:bg-accent/10 transition-all duration-300 transform hover:scale-110">
-            <Linkedin size={30} />
-            <span className="sr-only">LinkedIn</span>
-          </a>
-          <a href="mailto:contact@example.com" className="text-muted-foreground hover:text-accent p-2 rounded-full hover:bg-accent/10 transition-all duration-300 transform hover:scale-110">
-            <Mail size={30} />
-            <span className="sr-only">Email</span>
-          </a>
+    <header className="min-h-screen flex flex-col bg-background text-foreground">
+      {/* Navigation Bar */}
+      <nav className="container mx-auto px-4 py-4 flex justify-between items-center border-b border-border/10">
+        <div className="flex items-center gap-2">
+           <Bot className="w-7 h-7 text-accent" /> {/* Using Bot icon as placeholder */}
+          <span className="text-xl font-bold">FolioFlow</span>
         </div>
-        <Button
-          variant="outline"
-          size="lg"
-           /* Changed button border and hover to accent */
-          className="group bg-transparent border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 transform hover:scale-105"
-          onClick={handleScrollToProjects}
-          aria-label="Scroll to projects"
-        >
-          View My Work
-          <ArrowDown className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform duration-300" />
-        </Button>
-      </div>
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-pulse">
-        <ArrowDown className="w-8 h-8 text-muted-foreground/50" />
+        <div className="hidden md:flex items-center space-x-6">
+          <a href="#home" className="hover:text-accent transition-colors">Home</a>
+          <a href="#about" className="hover:text-accent transition-colors">About</a>
+          <a href="#projects-section" onClick={(e) => { e.preventDefault(); handleScrollToProjects(); }} className="hover:text-accent transition-colors">Projects</a>
+          <a href="#technologies" className="hover:text-accent transition-colors">Technologies</a>
+          <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
+        </div>
+         {/* Add Mobile Menu Button Here if needed */}
+      </nav>
+
+      {/* Main Content Area */}
+      <div className="flex-grow container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-12 py-16 md:py-24">
+        {/* Image Placeholder */}
+        <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+          <div className="relative w-full max-w-md aspect-video rounded-lg overflow-hidden bg-card shadow-lg">
+            <Image
+              src="https://picsum.photos/seed/headercode/640/360"
+              alt="Abstract code background"
+              layout="fill"
+              objectFit="cover"
+              data-ai-hint="abstract code"
+              priority
+            />
+            {/* Optional overlay */}
+             <div className="absolute inset-0 bg-black/30"></div>
+          </div>
+        </div>
+
+        {/* Text Content */}
+        <div className="w-full md:w-1/2 text-center md:text-left">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight text-glow-foreground">
+            Intelligent Automation to Boost Your Business
+          </h1>
+          <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto md:mx-0">
+            Developing customized solutions with modern technologies and AI to optimize your processes and drive efficiency.
+          </p>
+          <Button
+            size="lg"
+            className="group bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 transform hover:scale-105"
+            onClick={handleScrollToProjects}
+            aria-label="See my projects"
+          >
+            See my Projects
+            <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+          </Button>
+        </div>
       </div>
     </header>
   );

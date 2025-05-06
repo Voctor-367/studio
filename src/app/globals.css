@@ -13,99 +13,99 @@ body {
   :root {
     /* Base Light Theme (White background, black text, gray accents) */
     --background: 0 0% 100%; /* White */
-    --foreground: 0 0% 3.9%; /* Near Black */
+    --foreground: 222.2 84% 4.9%; /* Dark Blue-Gray */
 
-    --card: 0 0% 98%; /* Very Light Gray */
-    --card-foreground: 0 0% 3.9%; /* Near Black */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 222.2 84% 4.9%; /* Dark Blue-Gray */
 
     --popover: 0 0% 100%; /* White */
-    --popover-foreground: 0 0% 3.9%; /* Near Black */
+    --popover-foreground: 222.2 84% 4.9%; /* Dark Blue-Gray */
 
-    --primary: 0 0% 9%; /* Dark Gray */
-    --primary-foreground: 0 0% 98%; /* Very Light Gray */
+    --primary: 222.2 47.4% 11.2%; /* Dark Blue */
+    --primary-foreground: 210 40% 98%; /* Light Gray */
 
-    --secondary: 0 0% 60%; /* Medium Gray */
-    --secondary-foreground: 0 0% 9%; /* Dark Gray */
+    --secondary: 210 40% 96.1%; /* Light Gray */
+    --secondary-foreground: 222.2 47.4% 11.2%; /* Dark Blue */
 
-    --muted: 0 0% 96.1%; /* Light Gray */
-    --muted-foreground: 0 0% 45.1%; /* Medium-Dark Gray */
+    --muted: 210 40% 96.1%; /* Light Gray */
+    --muted-foreground: 215.4 16.3% 46.9%; /* Gray */
 
-    /* Changed accent to a vibrant purple as requested in proposal */
-    --accent: 270 82% 50%; /* Purple #A020F0 */
-    --accent-foreground: 0 0% 98%; /* White for contrast on purple */
+    /* Changed accent to a vibrant blue as seen in wireframe */
+    --accent: 217.2 91.2% 59.8%; /* Vibrant Blue */
+    --accent-foreground: 210 40% 98%; /* Light Gray */
 
     --destructive: 0 84.2% 60.2%; /* Default Red */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 89.8%; /* Light Gray Border */
-    --input: 0 0% 93%; /* Slightly darker input */
-    --ring: 0 0% 63.9%; /* Gray Ring */
+    --border: 214.3 31.8% 91.4%; /* Light Gray Border */
+    --input: 214.3 31.8% 91.4%; /* Light Gray Input */
+    --ring: 217.2 91.2% 59.8%; /* Blue Ring */
 
-    --chart-1: 0 0% 50%;
-    --chart-2: 0 0% 60%;
-    --chart-3: 0 0% 70%;
-    --chart-4: 0 0% 80%;
-    --chart-5: 0 0% 90%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 50%;
 
     --radius: 0.5rem;
 
     /* Sidebar Light Theme */
-    --sidebar-background: 0 0% 96%;
-    --sidebar-foreground: 0 0% 15%;
-    --sidebar-primary: 0 0% 20%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 0 0% 90%;
-    --sidebar-accent-foreground: 0 0% 10%;
-    --sidebar-border: 0 0% 80%;
-    --sidebar-ring: 0 0% 60%;
+    --sidebar-background: 210 40% 98%;
+    --sidebar-foreground: 222.2 47.4% 11.2%;
+    --sidebar-primary: 222.2 47.4% 11.2%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 210 40% 90%;
+    --sidebar-accent-foreground: 222.2 47.4% 11.2%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    /* Dark Mode: Black background, White text, Gray cards/accents */
-    --background: 0 0% 0%; /* Black */
-    --foreground: 0 0% 98%; /* White */
+     /* Dark Mode: Black background, White text, Gray cards/accents, Blue accent */
+    --background: 222.2 0% 0%; /* Black */
+    --foreground: 210 40% 98%; /* White */
 
-    --card: 0 0% 10%; /* Dark Gray for cards */
-    --card-foreground: 0 0% 95%; /* Light Gray for card text */
+    --card: 222.2 84% 6%; /* Very Dark Blue-Gray */
+    --card-foreground: 210 40% 98%; /* White */
 
-    --popover: 0 0% 8%; /* Darker Gray for popovers */
-    --popover-foreground: 0 0% 98%; /* White text */
+    --popover: 222.2 84% 4.9%; /* Darkest Blue-Gray */
+    --popover-foreground: 210 40% 98%; /* White */
 
-    --primary: 0 0% 95%; /* Light Gray for primary elements (e.g., text) */
-    --primary-foreground: 0 0% 5%; /* Near Black for contrast on primary */
+    --primary: 210 40% 98%; /* White */
+    --primary-foreground: 222.2 47.4% 11.2%; /* Dark Blue */
 
-    --secondary: 0 0% 50%; /* Medium Gray for secondary elements */
-    --secondary-foreground: 0 0% 98%; /* White text */
+    --secondary: 217.2 32.6% 17.5%; /* Dark Grayish Blue */
+    --secondary-foreground: 210 40% 98%; /* White */
 
-    --muted: 0 0% 15%; /* Dark Gray for muted backgrounds */
-    --muted-foreground: 0 0% 65%; /* Lighter Gray for muted text */
+    --muted: 217.2 32.6% 17.5%; /* Dark Grayish Blue */
+    --muted-foreground: 215 20.2% 65.1%; /* Lighter Gray */
 
-    /* Changed accent to a vibrant purple as requested in proposal */
-    --accent: 270 82% 60%; /* Adjusted Purple for dark mode */
-    --accent-foreground: 0 0% 98%; /* White */
+    /* Changed accent to a vibrant blue as seen in wireframe */
+    --accent: 217.2 91.2% 59.8%; /* Vibrant Blue */
+    --accent-foreground: 210 40% 98%; /* White */
 
-    --destructive: 0 62.8% 50.6%; /* Red (Dark Theme) */
+    --destructive: 0 62.8% 30.6%; /* Darker Red */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 20%; /* Dark Gray Border */
-    --input: 0 0% 18%; /* Dark Gray Input */
-    --ring: 0 0% 50%; /* Medium-Dark Gray Ring */
+    --border: 217.2 32.6% 17.5%; /* Dark Grayish Blue Border */
+    --input: 217.2 32.6% 17.5%; /* Dark Grayish Blue Input */
+    --ring: 217.2 91.2% 59.8%; /* Blue Ring */
 
-    --chart-1: 0 0% 70%;
-    --chart-2: 0 0% 60%;
-    --chart-3: 0 0% 50%;
-    --chart-4: 0 0% 40%;
-    --chart-5: 0 0% 30%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 50%;
 
     /* Dark Sidebar */
-    --sidebar-background: 0 0% 5%; /* Very Dark Gray/Near Black */
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 0 0% 80%;
-    --sidebar-primary-foreground: 0 0% 10%;
-    --sidebar-accent: 0 0% 15%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 0 0% 40%;
+    --sidebar-background: 222.2 84% 4.9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 210 40% 98%;
+    --sidebar-primary-foreground: 222.2 47.4% 11.2%;
+    --sidebar-accent: 217.2 32.6% 17.5%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
