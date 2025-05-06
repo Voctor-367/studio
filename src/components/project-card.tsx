@@ -2,7 +2,7 @@ import type { Project } from '@/types';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ListChecks, FileText, Package, Info, Zap } from 'lucide-react';
+import { ListChecks, FileText, Package, Info, Zap, Briefcase } from 'lucide-react';
 import Icon from './icon';
 import { cn } from '@/lib/utils';
 
@@ -12,90 +12,112 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <Card className="bg-card rounded-xl shadow-lg overflow-hidden border border-border/20 transition-all duration-300 hover:shadow-primary/10 hover:border-primary/20 group/card">
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8 p-6 md:p-8">
+    <div className="mb-16 md:mb-20">
+       {/* Project Title - Full Width */}
+       <h2 className="text-3xl md:text-4xl font-bold text-gradient-primary-accent mb-8 text-center md:text-left">{project.title}</h2>
 
-        {/* Left Column (Image) - Takes 2 columns on medium screens and up */}
-        <div className="md:col-span-2 relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-md border border-border/30">
-          <Image
-            src={project.imageUrl}
-            alt={project.imageAlt}
-            layout="fill"
-            objectFit="cover"
-            className="transition-transform duration-500 group-hover/card:scale-105"
-            data-ai-hint={project.imageAlt}
-            priority // Load the first image faster if it's likely above the fold
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 opacity-70 group-hover/card:opacity-50 transition-opacity duration-300"></div>
-        </div>
+       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-        {/* Right Column (Text Content) - Takes 3 columns on medium screens and up */}
-        <div className="md:col-span-3 flex flex-col space-y-6">
-          <CardHeader className="p-0">
-            <CardTitle className="text-3xl md:text-4xl font-bold text-gradient-primary-accent mb-2">{project.title}</CardTitle>
-          </CardHeader>
+         {/* Left Column (Description, Features, Tech Stack) */}
+         <div className="lg:col-span-1 flex flex-col space-y-6">
+            {/* Description Card */}
+            <Card className="bg-card/50 border-border/20 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/20">
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center text-xl font-semibold text-primary">
+                  <FileText className="w-5 h-5 mr-2 flex-shrink-0" />
+                  Description
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-foreground/80">{project.description}</p>
+              </CardContent>
+            </Card>
 
-          <CardContent className="p-0 space-y-6">
-            {/* Description Section */}
-            <div className="space-y-2">
-              <h3 className="flex items-center text-lg font-semibold text-primary">
-                <FileText className="w-5 h-5 mr-2 flex-shrink-0" />
-                Description
-              </h3>
-              <p className="text-sm text-foreground/80">{project.description}</p>
-            </div>
+            {/* Features Card */}
+            <Card className="bg-card/50 border-border/20 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/20">
+              <CardHeader className="pb-3">
+                 <CardTitle className="flex items-center text-xl font-semibold text-primary">
+                  <ListChecks className="w-5 h-5 mr-2 flex-shrink-0" />
+                   Key Features
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                 <ul className="space-y-1.5">
+                  {project.features.map((feature, index) => (
+                    <li key={index} className="flex items-start text-sm text-foreground/80">
+                      <Zap className="w-3.5 h-3.5 mr-2 mt-0.5 text-secondary flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
 
-            {/* Features Section */}
-            <div className="space-y-2">
-              <h3 className="flex items-center text-lg font-semibold text-primary">
-                <ListChecks className="w-5 h-5 mr-2 flex-shrink-0" />
-                 Key Features
-              </h3>
-              <ul className="space-y-1.5">
-                {project.features.map((feature, index) => (
-                  <li key={index} className="flex items-start text-sm text-foreground/80">
-                     <Zap className="w-3.5 h-3.5 mr-2 mt-0.5 text-secondary flex-shrink-0" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+             {/* Tech Stack Card */}
+            <Card className="bg-card/50 border-border/20 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/20">
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center text-xl font-semibold text-primary">
+                   <Package className="w-5 h-5 mr-2 flex-shrink-0" />
+                   Tech Stack
+                 </CardTitle>
+               </CardHeader>
+              <CardContent>
+                 <div className="flex flex-wrap gap-2">
+                  {project.techStack.map((tech) => (
+                    <Badge
+                      key={tech.name}
+                      variant="secondary"
+                      className={cn(
+                        "group/badge flex items-center gap-1.5 px-2.5 py-1 hover:bg-accent hover:text-accent-foreground transition-all duration-200 cursor-default",
+                        "bg-muted/60 text-foreground/80 border border-transparent hover:border-accent/50"
+                      )}
+                    >
+                      <Icon icon={tech.icon} size={16} className="text-inherit group-hover/badge:text-accent-foreground" />
+                      <span className="text-xs font-medium text-inherit group-hover/badge:text-accent-foreground">{tech.name}</span>
+                    </Badge>
+                  ))}
+                </div>
+               </CardContent>
+            </Card>
+         </div>
 
-             {/* Impact Section */}
-             <div className="space-y-2">
-              <h3 className="flex items-center text-lg font-semibold text-primary">
-                <Info className="w-5 h-5 mr-2 flex-shrink-0" />
-                 Project Impact
-              </h3>
-              <p className="text-sm text-foreground/80">{project.impact}</p>
-            </div>
+         {/* Right Column (Image, Details/Impact) */}
+        <div className="lg:col-span-2 flex flex-col space-y-6">
+            {/* Image Card */}
+            <Card className="bg-card/50 border-border/20 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md hover:border-primary/20 group/card">
+               <CardContent className="p-0">
+                <div className="relative w-full aspect-[16/9] rounded-t-lg overflow-hidden border-b border-border/30">
+                  <Image
+                    src={project.imageUrl}
+                    alt={project.imageAlt}
+                    layout="fill"
+                    objectFit="cover"
+                    className="transition-transform duration-500 group-hover/card:scale-105"
+                    data-ai-hint={project.imageAlt}
+                    priority={project.id === '1'} // Prioritize first image
+                  />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/5 opacity-60 group-hover/card:opacity-40 transition-opacity duration-300"></div>
+                </div>
+                {/* Optional: Add placeholder text below image if needed */}
+                {/* <div className="p-4 text-center text-sm text-muted-foreground">WHO AM I?</div> */}
+               </CardContent>
+             </Card>
 
-             {/* Tech Stack Section */}
-            <div className="space-y-2">
-               <h3 className="flex items-center text-lg font-semibold text-primary">
-                 <Package className="w-5 h-5 mr-2 flex-shrink-0" />
-                 Tech Stack
-               </h3>
-              <div className="flex flex-wrap gap-2">
-                {project.techStack.map((tech) => (
-                  <Badge
-                    key={tech.name}
-                    variant="secondary"
-                    className={cn(
-                      "group/badge flex items-center gap-1.5 px-2.5 py-1 hover:bg-accent hover:text-accent-foreground transition-all duration-200 cursor-default", // Changed cursor to default as it's not clickable
-                      "bg-muted/60 text-foreground/80 border border-transparent hover:border-accent/50"
-                    )}
-                  >
-                    <Icon icon={tech.icon} size={16} className="text-inherit group-hover/badge:text-accent-foreground" />
-                    <span className="text-xs font-medium text-inherit group-hover/badge:text-accent-foreground">{tech.name}</span>
-                  </Badge>
-                ))}
-              </div>
-            </div>
-          </CardContent>
-        </div>
+             {/* Project Details/Impact Card */}
+            <Card className="bg-card/50 border-border/20 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/20">
+               <CardHeader className="pb-3">
+                <CardTitle className="flex items-center text-xl font-semibold text-primary">
+                  <Briefcase className="w-5 h-5 mr-2 flex-shrink-0" /> {/* Changed Icon */}
+                   Project Details
+                 </CardTitle>
+               </CardHeader>
+              <CardContent>
+                 <p className="text-sm text-foreground/80">{project.impact}</p>
+               </CardContent>
+            </Card>
+         </div>
       </div>
-    </Card>
+    </div>
   );
 };
 
