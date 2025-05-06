@@ -8,7 +8,7 @@ body {
 
 @layer base {
   :root {
-    /* Black, White, Gray Theme */
+    /* Base Light Theme (Kept for reference/toggle) */
     --background: 0 0% 100%; /* White */
     --foreground: 0 0% 3.9%; /* Near Black */
 
@@ -21,7 +21,7 @@ body {
     --primary: 0 0% 9%; /* Dark Gray */
     --primary-foreground: 0 0% 98%; /* Very Light Gray */
 
-    --secondary: 0 0% 60%; /* Medium Gray - Lightened for more contrast */
+    --secondary: 0 0% 60%; /* Medium Gray */
     --secondary-foreground: 0 0% 9%; /* Dark Gray */
 
     --muted: 0 0% 96.1%; /* Light Gray */
@@ -45,62 +45,62 @@ body {
 
     --radius: 0.5rem;
 
-    /* Sidebar remains relatively consistent but uses grays */
-    --sidebar-background: 0 0% 96%; /* Light Gray */
-    --sidebar-foreground: 0 0% 15%; /* Dark Gray */
-    --sidebar-primary: 0 0% 20%; /* Dark Gray */
-    --sidebar-primary-foreground: 0 0% 98%; /* Very Light Gray */
-    --sidebar-accent: 0 0% 90%; /* Light Gray */
-    --sidebar-accent-foreground: 0 0% 10%; /* Near Black */
-    --sidebar-border: 0 0% 80%; /* Gray Border */
-    --sidebar-ring: 0 0% 60%; /* Gray Ring */
+    /* Sidebar Light Theme */
+    --sidebar-background: 0 0% 96%;
+    --sidebar-foreground: 0 0% 15%;
+    --sidebar-primary: 0 0% 20%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 90%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 80%;
+    --sidebar-ring: 0 0% 60%;
   }
 
   .dark {
-    /* Dark Mode: Inverted Black, White, Gray */
-    --background: 0 0% 3.9%; /* Near Black */
-    --foreground: 0 0% 98%; /* Very Light Gray */
+    /* Dark Mode: Black background, Gray cards */
+    --background: 0 0% 0%; /* Black */
+    --foreground: 0 0% 98%; /* Very Light Gray / White */
 
-    --card: 0 0% 3.9%; /* Near Black */
-    --card-foreground: 0 0% 98%; /* Very Light Gray */
+    --card: 0 0% 15%; /* Dark Gray */
+    --card-foreground: 0 0% 95%; /* Light Gray */
 
-    --popover: 0 0% 3.9%; /* Near Black */
-    --popover-foreground: 0 0% 98%; /* Very Light Gray */
+    --popover: 0 0% 10%; /* Darker Gray */
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 98%; /* Light Gray */
-    --primary-foreground: 0 0% 9%; /* Dark Gray */
+    --primary: 0 0% 85%; /* Lighter Gray for Primary Text/Elements */
+    --primary-foreground: 0 0% 5%; /* Near Black for contrast on primary */
 
-    --secondary: 0 0% 40%; /* Darker Medium Gray */
-    --secondary-foreground: 0 0% 98%; /* Very Light Gray */
+    --secondary: 0 0% 50%; /* Medium Gray */
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 14.9%; /* Dark Gray */
-    --muted-foreground: 0 0% 63.9%; /* Medium-Light Gray */
+    --muted: 0 0% 20%; /* Dark Gray */
+    --muted-foreground: 0 0% 65%; /* Medium-Light Gray */
 
-    --accent: 0 0% 20%; /* Darker Gray for Accent */
-    --accent-foreground: 0 0% 98%; /* Very Light Gray */
+    --accent: 0 0% 25%; /* Slightly Lighter Dark Gray for Accent */
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 72.2% 50.6%; /* Default Red (Dark) */
+    --destructive: 0 62.8% 50.6%; /* Red (Dark Theme) */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 14.9%; /* Dark Gray Border */
-    --input: 0 0% 18%; /* Dark Gray Input */
+    --border: 0 0% 25%; /* Dark Gray Border */
+    --input: 0 0% 22%; /* Dark Gray Input */
     --ring: 0 0% 50%; /* Medium-Dark Gray Ring */
 
-    --chart-1: 0 0% 50%;
-    --chart-2: 0 0% 40%;
-    --chart-3: 0 0% 30%;
-    --chart-4: 0 0% 20%;
-    --chart-5: 0 0% 10%;
+    --chart-1: 0 0% 70%;
+    --chart-2: 0 0% 60%;
+    --chart-3: 0 0% 50%;
+    --chart-4: 0 0% 40%;
+    --chart-5: 0 0% 30%;
 
     /* Dark Sidebar */
-    --sidebar-background: 0 0% 8%; /* Very Dark Gray */
-    --sidebar-foreground: 0 0% 95%; /* Very Light Gray */
-    --sidebar-primary: 0 0% 80%; /* Light Gray */
-    --sidebar-primary-foreground: 0 0% 10%; /* Very Dark Gray */
-    --sidebar-accent: 0 0% 20%; /* Dark Gray */
-    --sidebar-accent-foreground: 0 0% 95%; /* Very Light Gray */
-    --sidebar-border: 0 0% 25%; /* Dark Gray Border */
-    --sidebar-ring: 0 0% 40%; /* Medium-Dark Gray Ring */
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 0 0% 80%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 0 0% 20%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 25%;
+    --sidebar-ring: 0 0% 40%;
   }
 }
 
@@ -110,8 +110,7 @@ body {
   }
   body {
     @apply bg-background text-foreground;
-    /* Subtle gradient effect */
-    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsla(var(--background), 0.8) 100%);
+    /* Removed gradient */
   }
 }
 
@@ -122,16 +121,16 @@ body {
     scrollbar-color: hsla(var(--foreground), 0.3) transparent; /* Transparent track */
   }
   .scrollbar-thin::-webkit-scrollbar {
-    width: 8px; /* Slightly wider */
+    width: 8px;
     height: 8px;
   }
   .scrollbar-thin::-webkit-scrollbar-track {
-    background: transparent; /* Transparent track */
+    background: transparent;
   }
   .scrollbar-thin::-webkit-scrollbar-thumb {
     background-color: hsla(var(--foreground), 0.3);
     border-radius: 10px;
-    border: 2px solid transparent; /* Add border for better visual separation */
+    border: 2px solid transparent;
     background-clip: content-box;
   }
   .scrollbar-thin::-webkit-scrollbar-thumb:hover {
@@ -139,9 +138,13 @@ body {
   }
 }
 
-/* Add gradient text utility */
+/* Add text glow utility */
 @layer utilities {
-  .text-gradient-primary-accent {
+  .text-glow-primary {
+     text-shadow: 0 0 8px hsl(var(--primary) / 0.8), 0 0 16px hsl(var(--primary) / 0.5);
+     @apply text-primary; /* Ensure base color is also set */
+  }
+   .text-gradient-primary-accent { /* Keep the gradient utility if needed elsewhere, but remove from titles */
     @apply bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent;
   }
 }

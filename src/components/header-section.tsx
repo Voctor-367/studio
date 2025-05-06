@@ -10,11 +10,12 @@ const HeaderSection: React.FC = () => {
   };
 
   return (
-    <header className="min-h-screen flex flex-col justify-center items-center py-16 md:py-24 bg-gradient-to-br from-background via-muted/50 to-background relative border-b border-border/20">
+    <header className="min-h-screen flex flex-col justify-center items-center py-16 md:py-24 bg-background relative border-b border-border/20"> {/* Removed gradient */}
       <div className="container mx-auto px-4 text-center">
-        <Award className="w-20 h-20 md:w-24 md:h-24 text-primary mx-auto mb-6 animate-bounce" /> {/* Changed color to primary */}
+        <Award className="w-20 h-20 md:w-24 md:h-24 text-primary mx-auto mb-6 animate-bounce" />
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-4 tracking-tight">
-          <span className="text-gradient-primary-accent">
+           {/* Applied text-glow instead of gradient */}
+          <span className="text-glow-primary">
             FolioFlow
           </span>
         </h1>

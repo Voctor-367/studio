@@ -14,12 +14,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <div className="mb-16 md:mb-20">
        {/* Project Title - Full Width */}
-       <h2 className="text-3xl md:text-4xl font-bold text-gradient-primary-accent mb-8 text-center md:text-left">{project.title}</h2>
+       <h2 className="text-3xl md:text-4xl font-bold text-glow-primary mb-8 text-center md:text-left">{project.title}</h2>
 
+       {/* Changed grid columns: Left (lg:col-span-2), Right (lg:col-span-1) */}
        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-         {/* Left Column (Description, Features, Tech Stack) */}
-         <div className="lg:col-span-1 flex flex-col space-y-6">
+         {/* Left Column (Description, Features, Tech Stack) - Now wider */}
+         <div className="lg:col-span-2 flex flex-col space-y-6">
             {/* Description Card */}
             <Card className="bg-card/50 border-border/20 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/20">
               <CardHeader className="pb-3">
@@ -81,12 +82,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             </Card>
          </div>
 
-         {/* Right Column (Image, Details/Impact) */}
-        <div className="lg:col-span-2 flex flex-col space-y-6">
+         {/* Right Column (Image, Details/Impact) - Now narrower */}
+        <div className="lg:col-span-1 flex flex-col space-y-6">
             {/* Image Card */}
             <Card className="bg-card/50 border-border/20 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md hover:border-primary/20 group/card">
                <CardContent className="p-0">
-                <div className="relative w-full aspect-[16/9] rounded-t-lg overflow-hidden border-b border-border/30">
+                <div className="relative w-full aspect-[16/10] rounded-t-lg overflow-hidden border-b border-border/30"> {/* Slightly adjusted aspect ratio maybe */}
                   <Image
                     src={project.imageUrl}
                     alt={project.imageAlt}
@@ -98,8 +99,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   />
                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/5 opacity-60 group-hover/card:opacity-40 transition-opacity duration-300"></div>
                 </div>
-                {/* Optional: Add placeholder text below image if needed */}
-                {/* <div className="p-4 text-center text-sm text-muted-foreground">WHO AM I?</div> */}
                </CardContent>
              </Card>
 
@@ -107,8 +106,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             <Card className="bg-card/50 border-border/20 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/20">
                <CardHeader className="pb-3">
                 <CardTitle className="flex items-center text-xl font-semibold text-primary">
-                  <Briefcase className="w-5 h-5 mr-2 flex-shrink-0" /> {/* Changed Icon */}
-                   Project Details
+                  <Briefcase className="w-5 h-5 mr-2 flex-shrink-0" />
+                   Potential Impact
                  </CardTitle>
                </CardHeader>
               <CardContent>
