@@ -2,6 +2,14 @@ import ProjectCard from '@/components/project-card';
 import { projects } from './data';
 import { Briefcase } from 'lucide-react';
 import HeaderSection from '@/components/header-section'; // Import the new client component
+import type { Metadata } from 'next';
+
+// Updated metadata specific to the Home page
+export const metadata: Metadata = {
+  title: 'FolioFlow - Home',
+  description: 'Welcome to FolioFlow. Explore a collection of my projects showcasing skills in modern web development.',
+};
+
 
 export default function Home() {
   return (
@@ -14,9 +22,10 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient-primary-accent">My Projects</h2>
         </div>
 
+        {/* Removed scrollbar classes and styling from this wrapper */}
         <div className="space-y-16 md:space-y-20">
           {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </main>

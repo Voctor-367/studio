@@ -10,32 +10,32 @@ body {
   :root {
     /* Black, White, Gray Theme */
     --background: 0 0% 100%; /* White */
-    --foreground: 0 0% 10%; /* Near Black */
+    --foreground: 0 0% 3.9%; /* Near Black */
 
-    --card: 0 0% 98%; /* Very Light Gray */
-    --card-foreground: 0 0% 10%; /* Near Black */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 0 0% 3.9%; /* Near Black */
 
     --popover: 0 0% 100%; /* White */
-    --popover-foreground: 0 0% 10%; /* Near Black */
+    --popover-foreground: 0 0% 3.9%; /* Near Black */
 
-    --primary: 0 0% 20%; /* Dark Gray */
+    --primary: 0 0% 9%; /* Dark Gray */
     --primary-foreground: 0 0% 98%; /* Very Light Gray */
 
-    --secondary: 0 0% 50%; /* Medium Gray */
-    --secondary-foreground: 0 0% 10%; /* Near Black */
+    --secondary: 0 0% 60%; /* Medium Gray - Lightened for more contrast */
+    --secondary-foreground: 0 0% 9%; /* Dark Gray */
 
-    --muted: 0 0% 94%; /* Light Gray */
-    --muted-foreground: 0 0% 40%; /* Medium-Dark Gray */
+    --muted: 0 0% 96.1%; /* Light Gray */
+    --muted-foreground: 0 0% 45.1%; /* Medium-Dark Gray */
 
-    --accent: 0 0% 30%; /* Gray */
-    --accent-foreground: 0 0% 98%; /* Very Light Gray */
+    --accent: 0 0% 90%; /* Lighter Gray for Accent */
+    --accent-foreground: 0 0% 9%; /* Dark Gray */
 
     --destructive: 0 84.2% 60.2%; /* Default Red */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 85%; /* Light Gray Border */
-    --input: 0 0% 90%; /* Light Gray Input */
-    --ring: 0 0% 60%; /* Gray Ring */
+    --border: 0 0% 89.8%; /* Light Gray Border */
+    --input: 0 0% 93%; /* Slightly darker input */
+    --ring: 0 0% 63.9%; /* Gray Ring */
 
     --chart-1: 0 0% 50%;
     --chart-2: 0 0% 60%;
@@ -58,33 +58,33 @@ body {
 
   .dark {
     /* Dark Mode: Inverted Black, White, Gray */
-    --background: 0 0% 5%; /* Near Black */
+    --background: 0 0% 3.9%; /* Near Black */
     --foreground: 0 0% 98%; /* Very Light Gray */
 
-    --card: 0 0% 10%; /* Very Dark Gray */
+    --card: 0 0% 3.9%; /* Near Black */
     --card-foreground: 0 0% 98%; /* Very Light Gray */
 
-    --popover: 0 0% 10%; /* Very Dark Gray */
+    --popover: 0 0% 3.9%; /* Near Black */
     --popover-foreground: 0 0% 98%; /* Very Light Gray */
 
-    --primary: 0 0% 80%; /* Light Gray */
-    --primary-foreground: 0 0% 10%; /* Very Dark Gray */
+    --primary: 0 0% 98%; /* Light Gray */
+    --primary-foreground: 0 0% 9%; /* Dark Gray */
 
-    --secondary: 0 0% 50%; /* Medium Gray */
+    --secondary: 0 0% 40%; /* Darker Medium Gray */
     --secondary-foreground: 0 0% 98%; /* Very Light Gray */
 
-    --muted: 0 0% 15%; /* Dark Gray */
-    --muted-foreground: 0 0% 65%; /* Medium-Light Gray */
+    --muted: 0 0% 14.9%; /* Dark Gray */
+    --muted-foreground: 0 0% 63.9%; /* Medium-Light Gray */
 
-    --accent: 0 0% 70%; /* Lighter Gray */
-    --accent-foreground: 0 0% 10%; /* Very Dark Gray */
+    --accent: 0 0% 20%; /* Darker Gray for Accent */
+    --accent-foreground: 0 0% 98%; /* Very Light Gray */
 
     --destructive: 0 72.2% 50.6%; /* Default Red (Dark) */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 25%; /* Dark Gray Border */
-    --input: 0 0% 20%; /* Dark Gray Input */
-    --ring: 0 0% 40%; /* Medium-Dark Gray Ring */
+    --border: 0 0% 14.9%; /* Dark Gray Border */
+    --input: 0 0% 18%; /* Dark Gray Input */
+    --ring: 0 0% 50%; /* Medium-Dark Gray Ring */
 
     --chart-1: 0 0% 50%;
     --chart-2: 0 0% 40%;
@@ -110,8 +110,8 @@ body {
   }
   body {
     @apply bg-background text-foreground;
-    /* Add subtle gradient effect to body */
-    background: linear-gradient(to bottom right, hsl(var(--background)), hsla(var(--background), 0.8));
+    /* Subtle gradient effect */
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsla(var(--background), 0.8) 100%);
   }
 }
 
@@ -119,19 +119,19 @@ body {
 @layer utilities {
   .scrollbar-thin {
     scrollbar-width: thin;
-    scrollbar-color: hsla(var(--foreground), 0.3) transparent;
+    scrollbar-color: hsla(var(--foreground), 0.3) transparent; /* Transparent track */
   }
   .scrollbar-thin::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 8px; /* Slightly wider */
+    height: 8px;
   }
   .scrollbar-thin::-webkit-scrollbar-track {
-    background: transparent;
+    background: transparent; /* Transparent track */
   }
   .scrollbar-thin::-webkit-scrollbar-thumb {
     background-color: hsla(var(--foreground), 0.3);
     border-radius: 10px;
-    border: 1px solid transparent;
+    border: 2px solid transparent; /* Add border for better visual separation */
     background-clip: content-box;
   }
   .scrollbar-thin::-webkit-scrollbar-thumb:hover {

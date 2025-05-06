@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   // metadataBase: metadataBase, // Uncomment and set your base URL if using relative icon paths
-  title: 'FolioFlow',
-  description: 'My personal portfolio showcasing my projects.',
+  title: 'FolioFlow - Showcase Your Projects',
+  description: 'FolioFlow: A personal portfolio showcasing innovative projects built with modern technologies.',
   icons: null, // Explicitly disable default favicon generation
 };
 
@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased scrollbar-thin`}>
         {children}
         <Toaster />
       </body>

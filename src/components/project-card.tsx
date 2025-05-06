@@ -1,6 +1,6 @@
 import type { Project } from '@/types';
 import Image from 'next/image';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ListChecks, FileText, Package, Info, Zap } from 'lucide-react';
 import Icon from './icon';
@@ -12,35 +12,45 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <div className="bg-card rounded-xl shadow-lg overflow-hidden border border-border/20 transition-all duration-300 hover:shadow-primary/10">
-       <h2 className="text-3xl md:text-4xl font-bold p-6 md:p-8 text-gradient-primary-accent">{project.title}</h2>
+    <Card className="bg-card rounded-xl shadow-lg overflow-hidden border border-border/20 transition-all duration-300 hover:shadow-primary/10 hover:border-primary/20 group/card">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8 p-6 md:p-8">
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 p-6 md:p-8 pt-0">
+        {/* Left Column (Image) - Takes 2 columns on medium screens and up */}
+        <div className="md:col-span-2 relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-md border border-border/30">
+          <Image
+            src={project.imageUrl}
+            alt={project.imageAlt}
+            layout="fill"
+            objectFit="cover"
+            className="transition-transform duration-500 group-hover/card:scale-105"
+            data-ai-hint={project.imageAlt}
+            priority // Load the first image faster if it's likely above the fold
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 opacity-70 group-hover/card:opacity-50 transition-opacity duration-300"></div>
+        </div>
 
-        {/* Left Column (Description, Features, Tech Stack) */}
-        <div className="lg:col-span-1 space-y-6">
-          {/* Description Card */}
-          <Card className="bg-background/50 border-border/30 shadow-sm hover:shadow-md transition-shadow duration-300">
-            <CardHeader className="pb-2">
-              <CardTitle className="flex items-center text-lg text-primary">
-                <FileText className="w-5 h-5 mr-2" />
+        {/* Right Column (Text Content) - Takes 3 columns on medium screens and up */}
+        <div className="md:col-span-3 flex flex-col space-y-6">
+          <CardHeader className="p-0">
+            <CardTitle className="text-3xl md:text-4xl font-bold text-gradient-primary-accent mb-2">{project.title}</CardTitle>
+          </CardHeader>
+
+          <CardContent className="p-0 space-y-6">
+            {/* Description Section */}
+            <div className="space-y-2">
+              <h3 className="flex items-center text-lg font-semibold text-primary">
+                <FileText className="w-5 h-5 mr-2 flex-shrink-0" />
                 Description
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-sm text-foreground/80">{project.description}</CardDescription>
-            </CardContent>
-          </Card>
+              </h3>
+              <p className="text-sm text-foreground/80">{project.description}</p>
+            </div>
 
-          {/* Features Card */}
-          <Card className="bg-background/50 border-border/30 shadow-sm hover:shadow-md transition-shadow duration-300">
-            <CardHeader className="pb-2">
-              <CardTitle className="flex items-center text-lg text-primary">
-                <ListChecks className="w-5 h-5 mr-2" />
+            {/* Features Section */}
+            <div className="space-y-2">
+              <h3 className="flex items-center text-lg font-semibold text-primary">
+                <ListChecks className="w-5 h-5 mr-2 flex-shrink-0" />
                  Key Features
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </h3>
               <ul className="space-y-1.5">
                 {project.features.map((feature, index) => (
                   <li key={index} className="flex items-start text-sm text-foreground/80">
@@ -49,26 +59,31 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   </li>
                 ))}
               </ul>
-            </CardContent>
-          </Card>
+            </div>
 
-           {/* Tech Stack Card */}
-          <Card className="bg-background/50 border-border/30 shadow-sm hover:shadow-md transition-shadow duration-300">
-            <CardHeader className="pb-2">
-              <CardTitle className="flex items-center text-lg text-primary">
-                <Package className="w-5 h-5 mr-2" />
-                Tech Stack
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+             {/* Impact Section */}
+             <div className="space-y-2">
+              <h3 className="flex items-center text-lg font-semibold text-primary">
+                <Info className="w-5 h-5 mr-2 flex-shrink-0" />
+                 Project Impact
+              </h3>
+              <p className="text-sm text-foreground/80">{project.impact}</p>
+            </div>
+
+             {/* Tech Stack Section */}
+            <div className="space-y-2">
+               <h3 className="flex items-center text-lg font-semibold text-primary">
+                 <Package className="w-5 h-5 mr-2 flex-shrink-0" />
+                 Tech Stack
+               </h3>
               <div className="flex flex-wrap gap-2">
                 {project.techStack.map((tech) => (
                   <Badge
                     key={tech.name}
                     variant="secondary"
                     className={cn(
-                      "group/badge flex items-center gap-1.5 px-2.5 py-1 hover:bg-accent hover:text-accent-foreground transition-all duration-200 cursor-pointer",
-                      "bg-muted/60 text-foreground/80 border border-transparent hover:border-accent/50" // Subtle gray background, brighter on hover
+                      "group/badge flex items-center gap-1.5 px-2.5 py-1 hover:bg-accent hover:text-accent-foreground transition-all duration-200 cursor-default", // Changed cursor to default as it's not clickable
+                      "bg-muted/60 text-foreground/80 border border-transparent hover:border-accent/50"
                     )}
                   >
                     <Icon icon={tech.icon} size={16} className="text-inherit group-hover/badge:text-accent-foreground" />
@@ -76,44 +91,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   </Badge>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </CardContent>
         </div>
-
-        {/* Right Column (Image, Project Details) */}
-        <div className="lg:col-span-2 space-y-6">
-           {/* Image Card */}
-           <Card className="overflow-hidden shadow-md border-border/30">
-             <div className="relative w-full aspect-[16/9]">
-              <Image
-                src={project.imageUrl}
-                alt={project.imageAlt}
-                layout="fill"
-                objectFit="cover"
-                className="transition-transform duration-500 hover:scale-105"
-                data-ai-hint={project.imageAlt}
-                priority // Load the first image faster
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-             </div>
-           </Card>
-
-           {/* Project Details Card */}
-          <Card className="bg-background/50 border-border/30 shadow-sm hover:shadow-md transition-shadow duration-300">
-            <CardHeader className="pb-2">
-              <CardTitle className="flex items-center text-lg text-primary">
-                <Info className="w-5 h-5 mr-2" />
-                 Project Details / Impact
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-sm text-foreground/80">{project.impact}</CardDescription>
-            </CardContent>
-          </Card>
-        </div>
-
       </div>
-    </div>
+    </Card>
   );
 };
 
