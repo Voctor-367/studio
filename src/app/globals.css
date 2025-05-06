@@ -8,11 +8,11 @@ body {
 
 @layer base {
   :root {
-    /* Base Light Theme (Kept for reference/toggle) */
+    /* Base Light Theme (White background, black text, gray accents) */
     --background: 0 0% 100%; /* White */
     --foreground: 0 0% 3.9%; /* Near Black */
 
-    --card: 0 0% 100%; /* White */
+    --card: 0 0% 98%; /* Very Light Gray */
     --card-foreground: 0 0% 3.9%; /* Near Black */
 
     --popover: 0 0% 100%; /* White */
@@ -27,8 +27,9 @@ body {
     --muted: 0 0% 96.1%; /* Light Gray */
     --muted-foreground: 0 0% 45.1%; /* Medium-Dark Gray */
 
-    --accent: 0 0% 90%; /* Lighter Gray for Accent */
-    --accent-foreground: 0 0% 9%; /* Dark Gray */
+    /* Changed accent to a vibrant purple as requested in proposal */
+    --accent: 270 82% 50%; /* Purple #A020F0 */
+    --accent-foreground: 0 0% 98%; /* White for contrast on purple */
 
     --destructive: 0 84.2% 60.2%; /* Default Red */
     --destructive-foreground: 0 0% 98%;
@@ -57,27 +58,28 @@ body {
   }
 
   .dark {
-    /* Dark Mode: Black background, Dark Gray cards */
+    /* Dark Mode: Black background, White text, Gray cards/accents */
     --background: 0 0% 0%; /* Black */
-    --foreground: 0 0% 98%; /* Very Light Gray / White */
+    --foreground: 0 0% 98%; /* White */
 
     --card: 0 0% 10%; /* Dark Gray for cards */
-    --card-foreground: 0 0% 95%; /* Light Gray */
+    --card-foreground: 0 0% 95%; /* Light Gray for card text */
 
-    --popover: 0 0% 8%; /* Even Darker Gray for popovers */
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 8%; /* Darker Gray for popovers */
+    --popover-foreground: 0 0% 98%; /* White text */
 
-    --primary: 0 0% 85%; /* Lighter Gray for Primary Text/Elements */
+    --primary: 0 0% 95%; /* Light Gray for primary elements (e.g., text) */
     --primary-foreground: 0 0% 5%; /* Near Black for contrast on primary */
 
-    --secondary: 0 0% 50%; /* Medium Gray */
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 0 0% 50%; /* Medium Gray for secondary elements */
+    --secondary-foreground: 0 0% 98%; /* White text */
 
-    --muted: 0 0% 15%; /* Dark Gray */
-    --muted-foreground: 0 0% 65%; /* Medium-Light Gray */
+    --muted: 0 0% 15%; /* Dark Gray for muted backgrounds */
+    --muted-foreground: 0 0% 65%; /* Lighter Gray for muted text */
 
-    --accent: 0 0% 20%; /* Slightly Lighter Dark Gray for Accent */
-    --accent-foreground: 0 0% 98%;
+    /* Changed accent to a vibrant purple as requested in proposal */
+    --accent: 270 82% 60%; /* Adjusted Purple for dark mode */
+    --accent-foreground: 0 0% 98%; /* White */
 
     --destructive: 0 62.8% 50.6%; /* Red (Dark Theme) */
     --destructive-foreground: 0 0% 98%;
@@ -110,7 +112,6 @@ body {
   }
   body {
     @apply bg-background text-foreground;
-    /* Removed gradient */
   }
 }
 
@@ -144,7 +145,11 @@ body {
      text-shadow: 0 0 8px hsl(var(--primary) / 0.8), 0 0 16px hsl(var(--primary) / 0.5);
      @apply text-primary; /* Ensure base color is also set */
   }
-   .text-gradient-primary-accent { /* Keep the gradient utility if needed elsewhere, but remove from titles */
+   .text-gradient-primary-accent { /* Keep the gradient utility if needed elsewhere */
     @apply bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent;
   }
+   .text-glow-accent { /* Glow effect using accent color */
+     text-shadow: 0 0 8px hsl(var(--accent) / 0.8), 0 0 16px hsl(var(--accent) / 0.5);
+     @apply text-accent;
+   }
 }

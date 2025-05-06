@@ -18,9 +18,10 @@ export default function Home() {
 
       <main id="projects-section" className="container mx-auto px-4 py-16 md:py-20">
         <div className="flex items-center mb-12 md:mb-16">
-          <Briefcase className="w-10 h-10 md:w-12 md:h-12 text-primary mr-4" />
-           {/* Removed text-gradient, applied text-glow */}
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-glow-primary">My Projects</h1>
+           {/* Changed icon color to accent */}
+          <Briefcase className="w-10 h-10 md:w-12 md:h-12 text-accent mr-4" />
+           {/* Changed text-glow to accent */}
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-glow-accent">My Projects</h1>
         </div>
 
         {/* Map directly over projects, ProjectCard handles its own spacing */}
