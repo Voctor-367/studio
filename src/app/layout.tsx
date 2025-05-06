@@ -30,8 +30,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark"> {/* Added dark class */}
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased scrollbar-thin`}>
+    // Apply dark class to html tag for consistent dark mode
+    <html lang="en" className="dark">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased scrollbar-thin bg-black text-gray-100`}>
         {children}
         <Toaster />
       </body>
