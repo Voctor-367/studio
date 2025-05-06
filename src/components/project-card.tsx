@@ -87,7 +87,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             {/* Image Card - Adjusted background and border */}
             <Card className="bg-card/50 border-border/30 shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/30 group/card backdrop-blur-sm">
                <CardContent className="p-0">
-                <div className="relative w-full aspect-[16/10] rounded-t-lg overflow-hidden border-b border-border/30">
+                 {/* Added pseudo-element for circular glow */}
+                <div className="relative w-full aspect-[16/10] rounded-t-lg overflow-hidden border-b border-border/30
+                                before:content-[''] before:absolute before:w-full before:h-full before:left-[-25%] before:top-1/2 before:-translate-y-1/2
+                                before:bg-accent/15 before:rounded-full before:blur-3xl before:-z-10 before:opacity-70
+                                group-hover/card:before:opacity-90 group-hover/card:before:scale-110 transition-all duration-500">
                   <Image
                     src={project.imageUrl}
                     alt={project.imageAlt}
