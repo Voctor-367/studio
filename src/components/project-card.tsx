@@ -13,8 +13,8 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <div className="mb-16 md:mb-20">
-       {/* Project Title - Reverted font, kept foreground color, added glow */}
-       <h2 className="text-3xl md:text-4xl font-bold text-glow-accent mb-8 text-center md:text-left">{project.title}</h2>
+       {/* Project Title - Changed glow effect to foreground (white) */}
+       <h2 className="text-3xl md:text-4xl font-bold text-glow-foreground mb-8 text-center md:text-left">{project.title}</h2>
 
        {/* Grid layout for 60/40 split */}
        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">

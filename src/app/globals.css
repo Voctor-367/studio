@@ -152,4 +152,9 @@ body {
      text-shadow: 0 0 8px hsl(var(--accent) / 0.8), 0 0 16px hsl(var(--accent) / 0.5);
      @apply text-accent;
    }
+   /* Glow effect using foreground color (typically white in dark mode) */
+  .text-glow-foreground {
+     text-shadow: 0 0 8px hsl(var(--foreground) / 0.8), 0 0 16px hsl(var(--foreground) / 0.5);
+     @apply text-foreground;
+   }
 }
