@@ -2,7 +2,7 @@ import type { Project } from '@/types';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ListChecks, FileText, Package, Info, Zap, Briefcase } from 'lucide-react';
+import { ListChecks, FileText, Package, Briefcase, Zap } from 'lucide-react'; // Removed unused 'Info'
 import Icon from './icon';
 import { cn } from '@/lib/utils';
 
@@ -16,13 +16,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
        {/* Project Title - Full Width */}
        <h2 className="text-3xl md:text-4xl font-bold text-glow-primary mb-8 text-center md:text-left">{project.title}</h2>
 
-       {/* Changed grid columns: Left (lg:col-span-2), Right (lg:col-span-1) */}
-       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+       {/* Changed grid columns to lg:grid-cols-5 for 60/40 split */}
+       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
 
-         {/* Left Column (Description, Features, Tech Stack) - Now wider */}
-         <div className="lg:col-span-2 flex flex-col space-y-6">
+         {/* Left Column (Description, Features, Tech Stack) - Now wider (lg:col-span-3 ~ 60%) */}
+         <div className="lg:col-span-3 flex flex-col space-y-6">
             {/* Description Card */}
-            <Card className="bg-card/50 border-border/20 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/20">
+            <Card className="bg-card/80 border-border/20 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/20"> {/* Adjusted background opacity */}
               <CardHeader className="pb-3">
                 <CardTitle className="flex items-center text-xl font-semibold text-primary">
                   <FileText className="w-5 h-5 mr-2 flex-shrink-0" />
@@ -35,7 +35,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             </Card>
 
             {/* Features Card */}
-            <Card className="bg-card/50 border-border/20 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/20">
+            <Card className="bg-card/80 border-border/20 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/20"> {/* Adjusted background opacity */}
               <CardHeader className="pb-3">
                  <CardTitle className="flex items-center text-xl font-semibold text-primary">
                   <ListChecks className="w-5 h-5 mr-2 flex-shrink-0" />
@@ -55,7 +55,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             </Card>
 
              {/* Tech Stack Card */}
-            <Card className="bg-card/50 border-border/20 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/20">
+            <Card className="bg-card/80 border-border/20 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/20"> {/* Adjusted background opacity */}
               <CardHeader className="pb-3">
                 <CardTitle className="flex items-center text-xl font-semibold text-primary">
                    <Package className="w-5 h-5 mr-2 flex-shrink-0" />
@@ -70,7 +70,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                       variant="secondary"
                       className={cn(
                         "group/badge flex items-center gap-1.5 px-2.5 py-1 hover:bg-accent hover:text-accent-foreground transition-all duration-200 cursor-default",
-                        "bg-muted/60 text-foreground/80 border border-transparent hover:border-accent/50"
+                        "bg-muted/60 text-foreground/80 border border-transparent hover:border-accent/50" // Ensured badge background is muted and slightly transparent
                       )}
                     >
                       <Icon icon={tech.icon} size={16} className="text-inherit group-hover/badge:text-accent-foreground" />
@@ -82,10 +82,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             </Card>
          </div>
 
-         {/* Right Column (Image, Details/Impact) - Now narrower */}
-        <div className="lg:col-span-1 flex flex-col space-y-6">
+         {/* Right Column (Image, Details/Impact) - Now narrower (lg:col-span-2 ~ 40%) */}
+        <div className="lg:col-span-2 flex flex-col space-y-6">
             {/* Image Card */}
-            <Card className="bg-card/50 border-border/20 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md hover:border-primary/20 group/card">
+            <Card className="bg-card/80 border-border/20 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md hover:border-primary/20 group/card"> {/* Adjusted background opacity */}
                <CardContent className="p-0">
                 <div className="relative w-full aspect-[16/10] rounded-t-lg overflow-hidden border-b border-border/30"> {/* Slightly adjusted aspect ratio maybe */}
                   <Image
@@ -103,7 +103,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
              </Card>
 
              {/* Project Details/Impact Card */}
-            <Card className="bg-card/50 border-border/20 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/20">
+            <Card className="bg-card/80 border-border/20 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/20"> {/* Adjusted background opacity */}
                <CardHeader className="pb-3">
                 <CardTitle className="flex items-center text-xl font-semibold text-primary">
                   <Briefcase className="w-5 h-5 mr-2 flex-shrink-0" />
