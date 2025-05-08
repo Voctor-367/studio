@@ -6,16 +6,16 @@ import { SiPubmed, SiOpenai, SiStreamlit, SiRedis, SiGoogle, SiSupabase, SiWhats
 import { VscAzure } from "react-icons/vsc";
 import { FaRobot } from "react-icons/fa6";
 
-import shopSphereImage from '@/assets/BioLitExplorer.png';
-import taskMasterImage from '@/assets/BioLitExplorer.png';
-import insightAIImage from '@/assets/BioLitExplorer.png';
-import connectHubImage from '@/assets/BioLitExplorer.png';
+import BioLitExplorerImage from '@/assets/BioLitExplorer.png';
+import TutorReligiosoImage from '@/assets/TutorReligioso.png';
+import AgenteConsorcioImage from '@/assets/AgenteConsorcio.png';
+import ElisImage from '@/assets/Elis.png';
 
 export const projects: Project[] = [
   {
     id: '1',
     title: 'BioLit Explorer 🧬🔬',
-    imageUrl: shopSphereImage.src, // Use imported image
+    imageUrl: BioLitExplorerImage.src, // Use imported image
     imageAlt: 'E-commerce Platform online store',
     link: 'https://github.com/Voctor-367/BioLitExplorer.git',
     description: 'Um co-piloto de pesquisa movido por IA que impulsiona a descoberta biomédica. O BioLit Explorer integra de forma inteligente a análise interativa de dados experimentais com a exploração profunda e contextualizada da literatura científica, permitindo que pesquisadores formulem hipóteses robustas e acelerem seus avanços numa fração do tempo.',
@@ -26,7 +26,10 @@ export const projects: Project[] = [
       'Busca Contextualizada na Literatura (PubMed): Obtenha artigos científicos relevantes do PubMed, com buscas direcionadas pelos seus dados e objetivos de pesquisa.',
       'Especialidade Fluida" para Análises: Coleta contexto inicial do usuário (objetivo, tipo de dados) para adaptar dinamicamente os prompts e as estratégias de análise, tornando a ferramenta poderosa para diversos estudos biomédicos.',
     ],
-    impacts: ['O BioLit Explorer redefine o fluxo de trabalho do pesquisador biomédico, acelerando o ciclo da coleta de dados à formulação de hipóteses,  democratizando análises avançadas – incluindo a interpretação de gráficos – através da linguagem natural com suporte de IA, capacitando assim uma gama mais ampla de cientistas. Ao conectar rapidamente achados experimentais à literatura científica mais pertinente do PubMed, a plataforma eleva a qualidade e profundidade dos insights, permitindo a identificação de padrões sutis, a validação de resultados e a descoberta de novas linhas de investigação que poderiam ser perdidas manualmente. Adicionalmente, ao filtrar o ruído de um volume imenso de publicações científicas, o BioLit Explorer reduz a sobrecarga cognitiva e, ao simplificar barreiras técnicas e temporais, fomenta um ambiente de inovação, onde mais hipóteses podem ser exploradas e descobertas disruptivas tornam-se mais prováveis.',],
+    impacts: ['Acelera o ciclo da coleta de dados à formulação de hipóteses,  democratizando análises avançadas – incluindo a interpretação de gráficos – através da linguagem natural, capacitando assim uma gama mais ampla de cientistas.',
+      'Conecta rapidamente achados experimentais à literatura científica mais pertinente do PubMed, elevando a qualidade e profundidade dos insights, permitindo a identificação de padrões sutis, a validação de resultados e a descoberta de novas linhas de investigação que poderiam ser perdidas manualmente.', 
+      'Filtragem de um volume imenso de publicações científicas, reduzindo a sobrecarga cognitiva e simplificando barreiras técnicas e temporais, onde mais hipóteses disruptivas podem ser exploradas e descobertas.',
+    ],
     techStack: [
       { name: 'Python', icon: IoLogoPython },
       { name: 'LangGraph', icon: GitMerge },
@@ -41,8 +44,8 @@ export const projects: Project[] = [
   {
     id: '2',
     title: 'Agente de IA para Consultoria de Consórcios',
-    imageUrl: taskMasterImage.src, // Use imported image
-    imageAlt: 'Project Management Tool dashboard',
+    imageUrl: AgenteConsorcioImage.src, // Use imported image
+    imageAlt: 'Consulting AI Agent',
     link: 'https://kroki.io/mermaid/svg/eNq9WM1u20YQvvcpFgpSJAJd_1BSawUooNhOYiBGHCtID0YOK3IpLUJylSWpuKl76KMkOQQo0FPRS696sc7MLsklxaSWi1QGLHFnd-bb-flml3PNlwv24vgbBp-7d9mRSpYqFWkuMhYKdpLmmod8d8rXf4ScJv0kZgulXl_2rGxcjrAddiECMRMsEWnG5_CPhYoVWbF-r6XqvWI7Oz-yCz6byfzsOekqrZaDbMk1Z3OhRRpIDmpyhSgiGfMM1B_LlczWHxVbKs1yuSShNZaQrlLRZa_fL3_3-7D0cbdOwZZCZzLL17-j1NGXZhbwI5j4Qlzl6rKHP8fszBpkNNp71TBcLZkUodxcsv4Nhz-35jTBSRuLzLBdVLlMhDJjgUoUmxVRJLTxXQAR6XZNtQ8y95DWkJLLez36HtvBhhPAdUc8WAiWC0gMbSJ5_1WlkbbZ1lhJDfJOcbmPZ_pNITLMJIjpkcCcitlSq0BkGWccd5VLjYlUr3V0kW5XB0a-DDaqdDfTyARwFe5LsIzHK85StYJ8-EzmNhBPdMLfibRKpUimMpcrBSrYucryuRbT509pdmNziNTKsyeQckrLQIHz-_1pMeMznokxw_H1nyjYBN62C8FPV5C9PCsDsqHdZJaChTmvTYLFc-NgNcaSLaAGuGOarL3QsKYytWjgKg2blOPp-n0sM9Fy01SAVEim2NOnZ1OhVzIQZkEGOZZwzF4bbsGgrgseoznQHnOtSEu98B65CX-vPwFoEBDIZ0uRTk53H4sEYtC7f78G0N40eWIyRwP7NMH-RmeYn2OgFx6reSHYGU_B7ZpMnIYglJEMOINIQiAZFFjlAFGRFewziosrZbYYCtogJ80lk9Tbae1uA5yLkITTtzIPFr8A2GMREAdCtULGIB5Iu5MK2ZFFRtgvVC5sDAlVCZGH4k0BC3q_NiL2iIQ9UJHLtOBQjioWOZHiaRqhQ9ef1n_BdmiBgYTorv91xTV7KTQ5EQqBfO48E9SXPJYAH5J3CUkMUAsGbuUQ1wW3ieWquIE_3end60_SleR6ArlHNWF6HLSzBc-zyXK5e7JScZFLlRJCml0BhNh-liCsH4_Xf69gTxvesuPXGzl6XOD4Vy7PbqNOBh44yXfglsdUcA1bOAelicihhk-uoHoDUDM2_JRCDNGq0NBcWQMVIalLiZrV-gOo0SrbhS_oWqGiE8esyAK-RcEctAvmgITA8vwkmYkwlOm86dKHaIEONwmQrnGiyUGBLnmHOfuxLPOsiHPrSEIG5JWsP8A2kA_wEAEuwBaHJ5JqH9bVDQymjIslET1ZIuo_fjgGu-hENoV_goBgZdtALqDcTZih1TN0kQoKGiBvUbtHmODnoO7MDTtuEzhaFOnrrOkPK7K7Br1mEqS6ST0YIlTnGhm9msdE7T7joLI23HJo2HXC5jsR890se44NE2oO0il7CxULniMRQTjSTgmyGREgtu4y5wBVEEtU5MEoNBhjVpR87EToxgnmtxPMb9OL_98Jzd-O0Pzu9Q6h7X8NRgMyUhDv0OTABrE1xZv8RvL_md7IphPNgRPIgZt3gAkySNSkZlyET5I1GGoj17ZIpkE7mQaNY-F5zCFtgRiQFswDWjyqCpxYQKRawrmyJAY6KJZ53ToJWh0OA1gTHYyIFGbnT-wBwRT-UUWDMKOmPIRChhU5RnU5ZoMIHEDGAUPHGcNGQGAm9ZSf30Gv-ZZRJDG97MGs1W5qq3ipM1YM1u3KfdiO0NARjpzxkQv2AosozYS5P2cWot1zTQJwVYDjLjoOuYulbvreGOGojXDUpofRFwgpctn-y6Q02o6URt3rXVLqIBVwRpHYewFexHR966GJznLTQnHS5PQsa3V1Gq_uzOb4K-YSL1_VPRh7-ukE-8WMp4ZM3H7tIm3ZMlRXPXbf5Rq7O4XA6JVIjaOfFAncKUhWCgKuzOhl42rTta7f7zwCfwecO4UsEugCou3rTe0dneJW60bbrCudAPcSGVcnqkTEC4WvjEgM17wsOxYRhCCnwwqWazy-Ew2CIIo8CJx6LcZ3Dg99Pwjs485bGeaL8cHyygtUDAfPO77ve1oVwArhONeFeNDUrekdgVUczUbBfqU4ikb-D4PbKqabnVU888NDB7HvH9aPWyvObHGVmAG172AOgr29pmr_xqqhfRitwX6053hiEPBouHdbwCFeSPHAViIOgipe-DiEz411e9mCL8U4lDxRadiyZN8KWUNihH-VoRF9bruJFSW60FY3xPP7mah0Dw-CwT6_rW5o1UUdT7HXiOfh4d62nq-1b1KQ12z8XvMiUFaaA7DxLo2qxRXaVxCevVnZb99-D-z30Cv7EFWFq6DuFt4GU5Sp7s63r5I9h4q9Bi1L5U63h88yBV1R-yDodV98vc4Do9e4unmNS4zXOMl4TlOw-emicAnbc1nYa1BrmX7u0vLtsFe9uPWqF66e83KV0uvBP4ok_Ac',
     description: 'Um Agente de IA conversacional projetado para simplificar e personalizar a jornada de escolha de consórcios. Focada em oferecer orientação precisa 24/7, qualificar leads e otimizar a eficiência das equipes de vendas, utilizando lógica de recomendação baseada em regras de negócio, documentos internos e perfil de cada lead.',
     features: [
@@ -72,11 +75,11 @@ export const projects: Project[] = [
   },
   {
     id: '3',
-    title: 'ElizIA - Automação Inteligente para Atendimento Farmacêutico',
-    imageUrl: insightAIImage.src, // Use imported image
-    imageAlt: 'AI Analytics Dashboard charts',
-    link: 'https://github.com/Voctor-367/BioLitExplorer.git',
-    description: 'ElizIA é uma solução de automação desenvolvida para agilizar o ciclo de vendas B2B, aumentar a capacidade de processamento de pedidos e melhorar a acurácia das informações para distribuidoras e fabricantes de produtos farmacêuticos, com foco em otimizar o processo de cotação e fechamento de pedidos junto a seus clientes diretos: prescritores, farmácias e manipuladores. A ElizIA é projetada com a capacidade crucial de integração com sistemas ERP (Enterprise Resource Planning). Essa integração permite consultas de estoque em tempo real e a automatização de etapas subsequentes do processamento de pedidos, desde a verificação de disponibilidade até o encaminhamento para faturamento e logística.',
+    title: 'Elis - Automação Inteligente para Atendimento Farmacêutico',
+    imageUrl: ElisImage.src, // Use imported image
+    imageAlt: 'Elis - Intelligent Automation for Pharmaceutical Sales',
+    link: 'https://webhook.tiagoai.space/webhook/31e2cfc7-964f-4d23-a01d-fc7aa12c33d6/chat',
+    description: 'Elis é uma solução de automação desenvolvida para agilizar o ciclo de vendas B2B, aumentar a capacidade de processamento de pedidos e melhorar a acurácia das informações para distribuidoras e fabricantes de produtos farmacêuticos, com foco em otimizar o processo de cotação e fechamento de pedidos junto a seus clientes diretos: prescritores, farmácias e manipuladores. A Elis é projetada com a capacidade crucial de integração com sistemas ERP (Enterprise Resource Planning). Essa integração permite consultas de estoque em tempo real e a automatização de etapas subsequentes do processamento de pedidos, desde a verificação de disponibilidade até o encaminhamento para faturamento e logística.',
     features: [
       'Integração com plataformas de mensagens (ChatWoot) e API do WhatsApp para comunicação.',
       'Recomendação Personalizada e Oportuna (UpSell Estratégico): O agente de IA avalia o contexto da conversa, os produtos de interesse do cliente e as regras de negócio pré-definidas, e com base nessa análise, a IA identifica e oferece, no momento certo da interação, produtos complementares relevantes, apresentações com melhor custo-benefício (ex: embalagens maiores), ou alternativas de maior valor agregado.',
@@ -86,7 +89,7 @@ export const projects: Project[] = [
     impacts: [
       'Reduz o tempo médio de atendimento e o custo por interação, permitindo escalar a operação sem um aumento proporcional nos custos.',
       'Automatiza o atendimento de um alto volume de consultas e pedidos rotineiros, liberando a equipe humana para focar em negociações complexas, relacionamento estratégico e resolução de problemas críticos.',
-      'Maximização do Ticket Médio: Através do upsell inteligente e contextual, a ElizIA identifica e aproveita oportunidades para oferecer produtos adicionais ou de maior valor, aumentando diretamente a receita por pedido.',
+      'Maximização do Ticket Médio: Através do upsell inteligente e contextual, a Elis identifica e aproveita oportunidades para oferecer produtos adicionais ou de maior valor, aumentando diretamente a receita por pedido.',
       'Consistência no Atendimento: Garante um padrão de qualidade e informação em todas as interações automatizadas.',
     ],
     techStack: [
@@ -99,14 +102,14 @@ export const projects: Project[] = [
       { name: 'Whatsapp API', icon: SiWhatsapp },
       { name: 'Chatwoot', icon: SiChatwoot },
     ], 
-    imageBadgeText: 'Explorar documentação',
+    imageBadgeText: 'Teste a Elis',
   },
 
    {
     id: '4',
     title: 'AI Agent - Tutor Religioso',
-    imageUrl: connectHubImage.src, // Use imported image
-    imageAlt: 'Social Networking App user profiles',
+    imageUrl: TutorReligiosoImage.src, // Use imported image
+    imageAlt: 'AI Agent for Religious Tutoring',
     link: 'https://github.com/Voctor-367/BioLitExplorer.git',
     description: 'Um Agente de IA construído como um assistente dedicado aos mentores do serviço de ensino religioso de uma igreja. O agente tem como objetivo otimizar o gerenciamento do ensino, automatizar tarefas administrativas, facilitar o acesso rápido e interativo a conteúdos bíblicos e fornecer insights sobre o progresso dos alunos.',
     features: [
@@ -133,6 +136,6 @@ export const projects: Project[] = [
       { name: 'Whatsapp API', icon: SiWhatsapp },
       { name: 'Chatwoot', icon: SiChatwoot },
     ],
-    imageBadgeText: 'Explorar documentação',
+    imageBadgeText: '',
   },
 ];

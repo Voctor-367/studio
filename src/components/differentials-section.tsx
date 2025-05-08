@@ -8,7 +8,7 @@ const differentialsData = [
 		icon: <Brain />,
 		title: 'Personalização Inteligente com Análise de Histórico',
 		description:
-			'Identificação do perfil do cliente pela análise do histórico de conversas para fornecer respostas precisas, recomendações relevantes e uma experiência verdadeiramente personalizada.',
+			'Identificação do perfil do Lead pela análise do histórico de conversas para fornecer respostas precisas, recomendações relevantes e uma experiência verdadeiramente personalizada.',
 	},
 	{
 		id: 2,
@@ -22,7 +22,7 @@ const differentialsData = [
 		icon: <Eye />,
 		title: 'Monitoramento Ativo',
 		description:
-			'Observalidade para controle de qualidade do funcionamento da solução e da infraestrutura,  assegurando  controle e otimização contínua.',
+			'Observalidade para controle de qualidade do funcionamento da solução e da infraestrutura,  assegurando  disponibilidade e otimização contínua.',
 	},
 	{
 		id: 4,

@@ -14,7 +14,6 @@ const oxaniumFont = Oxanium({
 export const metadata: Metadata = {
   title: 'FolioFlow - Showcase Your Projects',
   description: 'FolioFlow: A personal portfolio showcasing innovative projects built with modern technologies.',
-  icons: null,
 };
 
 export default function RootLayout({
@@ -24,6 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn("dark", oxaniumFont.variable)}>
+      <head>
+        {/* Use o ícone de bot como favicon */}
+        <link rel="icon" href="/bot.svg" type="image/svg+xml" />
+      </head>
       <body className="antialiased scrollbar-thin bg-black text-gray-100">
         {children}
         <Toaster />

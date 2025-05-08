@@ -4,39 +4,42 @@ import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Bot } from 'lucide-react';
+import { RiListCheck3, RiCodeBoxLine, RiTestTubeLine, RiEyeLine   } from "react-icons/ri";
+import { MdOutlineDesignServices } from "react-icons/md";
 import DifferentialsSection from './differentials-section';
 import MethodologyTimeline from './methodology-timeline';
 import dottedTexture from '@/assets/dotted-texture.jpg'; // Import the texture
 import headerImage from '@/assets/header-image.png'; // Import your image from assets
+import AnimatedWord from './animated-word'
 
 const methodologyStages = [
 	{
 		id: 1,
-		icon: Bot,
+		icon: RiListCheck3,
 		title: 'Discovery & Planning',
 		description: 'Análise dos processos e pontos de automação, definindo requisitos específicos e métricas de sucesso para a solução.',
 	},
 	{
 		id: 2,
-		icon: ArrowRight,
+		icon: MdOutlineDesignServices,
 		title: 'Design & Prototyping',
 		description: 'Arquitetura do fluxo conversacional com definição de intents, entidades e contextos. Desenvolvimento de prompts eficientes para LLMs e criação de protótipos funcionais para validação rápida.',
 	},
 	{
 		id: 3,
-		icon: Bot,
+		icon: RiCodeBoxLine,
 		title: 'Development & Integration',
 		description: 'Implementação das integrações com APIs, sistemas (ex: CRM) e canais de comunicação. Desenvolvimento de mecanismos de fallback para lidar com exceções ou respostas inesperadas de APIs/LLMs e garantir a resiliência.',
 	},
 	{
 		id: 4,
-		icon: ArrowRight,
+		icon: RiTestTubeLine,
 		title: 'Testing & QA',
 		description: 'Validação extensiva do agente com cenários reais de uso, testes de robustez para identificar edge cases conversacionais e testes de carga da arquitetura para garantir disponibilidade e performance do serviço',
 	},
 	{
 		id: 5,
-		icon: Bot,
+		icon: RiEyeLine,
 		title: 'Deployment & Observability',
 		description: 'Implantação da solução em ambiente de produção com monitoramento contínuo e análise de interações para identificar oportunidades de melhoria',
 	},
@@ -46,6 +49,10 @@ const HeaderSection: React.FC = () => {
 	const handleScrollToProjects = () => {
 		document.getElementById('projects-section')?.scrollIntoView({ behavior: 'smooth' });
 	};
+	const handleScrollToHome = (e: React.MouseEvent<HTMLAnchorElement>) => {
+		e.preventDefault();
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	};
 
 	return (
 		<>
@@ -54,16 +61,18 @@ const HeaderSection: React.FC = () => {
 				style={{ backgroundImage: `url(${dottedTexture.src})` }} // Use the imported texture
 			>
 				{/* Navigation Bar */}
-				<nav className="container mx-auto px-4 py-4 flex justify-between items-center border-b border-border/10">
+				<nav className="container mx-auto px-4 py-4 flex justify-between items-center border-b border-border/10 bg-background/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50">
 					<div className="flex items-center gap-2">
 						<Bot className="w-7 h-7 text-accent" /> {/* Using Bot icon as placeholder */}
-						<span className="text-xl font-bold">FolioFlow</span>
 					</div>
 					<div className="hidden md:flex items-center space-x-6">
-						<a href="#home" className="hover:text-accent transition-colors">
+						<a
+							href="#home"
+							onClick={handleScrollToHome}
+							className="hover:text-accent transition-colors"
+						>
 							Home
 						</a>
-
 						<a
 							href="#projects-section"
 							onClick={(e) => {
@@ -72,9 +81,8 @@ const HeaderSection: React.FC = () => {
 							}}
 							className="hover:text-accent transition-colors"
 						>
-							Projects
+							Projetos
 						</a>
-					
 						<a
 							href="#footer"
 							onClick={(e) => {
@@ -83,19 +91,21 @@ const HeaderSection: React.FC = () => {
 							}}
 							className="hover:text-accent transition-colors"
 						>
-							Contact
+							Contato
 						</a>
 					</div>
 					{/* Add Mobile Menu Button Here if needed */}
 				</nav>
 
 				{/* Main Content Area */}
-				<div className="flex-grow container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-20 py-16 md:py-24">
+				<div className="flex-grow container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-20 py-16 md:py-24"
+					style={{ minHeight: "calc(100vh - 80px)", paddingTop: "120px" }} // paddingTop compensates nav height
+				>
 					{/* Image Placeholder */}
 					<div className="w-full md:w-1/2 flex justify-center md:justify-end">
-						<div className="relative w-full max-w-md aspect-video rounded-lg overflow-hidden bg-card shadow-lg">
+						<div className="relative w-full max-w-xl aspect-[16/8] rounded-lg overflow-hidden bg-card shadow-lg"> {/* max-w-xl and aspect-[16/8] for bigger image */}
 							<Image
-								src={headerImage} // Use the imported image
+								src={headerImage}
 								alt="Abstract code background"
 								layout="fill"
 								objectFit="cover"
@@ -109,12 +119,21 @@ const HeaderSection: React.FC = () => {
 
 					{/* Text Content */}
 					<div className="w-full md:w-1/2 text-center md:text-left">
-						<h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-600 to-blue-800">
-							Intelligent Automation to Boost Your Business
+						<h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-600 to-blue-800">
+							Automação Inteligente para Impulsionar Seu{" "}
+							<AnimatedWord
+								words={[
+									"Negócio",
+									"Desempenho",
+									"Trabalho",
+									"Potencial",
+									"Objetivo",
+								]}
+								interval={3000}
+							/>
 						</h1>
 						<p className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-xl mx-auto md:mx-0 leading-relaxed">
-							Developing customized solutions with modern technologies and AI to optimize your processes and drive
-							efficiency.
+							Desenvolvendo soluções personalizadas com IA para otimizar seus processos e aumentar a eficiência.
 						</p>
 					</div>
 				</div>
