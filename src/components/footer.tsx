@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
           </p>
           <div className="flex justify-center md:justify-start gap-12">
             <a
-              href="https://github.com/seu-usuario"
+              href="https://github.com/Voctor-367"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
               </svg>
             </a>
             <a
-              href="https://linkedin.com/in/seu-usuario"
+              href="https://www.linkedin.com/in/victorfonteles/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -33,15 +33,7 @@ const Footer: React.FC = () => {
                 <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.25c-.97 0-1.75-.78-1.75-1.75s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.25h-3v-5.5c0-1.1-.9-2-2-2s-2 .9-2 2v5.5h-3v-10h3v1.25c.88-.84 2.17-1.25 3.5-1.25 2.48 0 4.5 2.02 4.5 4.5v5.5z" />
               </svg>
             </a>
-            <a
-              href="mailto:seu-email@example.com"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Email"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 13.5L0 6V18h24V6l-12 7.5zm0-2.25L24 6H0l12 5.25z" />
-              </svg>
-            </a>
+            <p>victorwilva@gmail.com</p>
           </div>
         </div>
 

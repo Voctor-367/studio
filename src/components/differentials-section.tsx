@@ -43,7 +43,7 @@ const DifferentialsSection: React.FC<{ className?: string }> = ({ className }) =
 				<p className="text-lg md:text-xl text-muted-foreground text-center mb-16 leading-relaxed">
         Personalização, integração abrangente, robustez e evolução contínua.
 				</p>
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-0"> {/* Further reduced vertical and horizontal gap */}
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6">
 					{/* Reduced gap between cards */}
 					{differentialsData.map((diff) => (
 						<DifferentialCard

@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ListChecks, FileText, Package, Briefcase, Zap, GitMerge } from 'lucide-react';
 import { IoLogoPython } from "react-icons/io5";
-import { SiPubmed, SiOpenai, SiStreamlit, SiRedis, SiGoogle, SiSupabase, SiWhatsapp, SiN8N, SiDocker, SiRabbitmq, SiChatwoot  } from "react-icons/si";
+import { SiPubmed, SiOpenai, SiStreamlit, SiRedis, SiGoogle, SiSupabase, SiWhatsapp, SiN8N, SiDocker, SiRabbitmq, SiChatwoot } from "react-icons/si";
 import { VscAzure } from "react-icons/vsc";
 import { FaRobot } from "react-icons/fa6";
 
@@ -32,6 +32,7 @@ const techDisplayConfig: Record<string, { icon: LucideIcon | React.FC<SVGProps<S
   'RabbitMQ': { icon: SiRabbitmq, className: 'bg-[#FF6600]/20 text-[#FF6600] border-[#FF6600]/30 hover:bg-[#FF6600]/30 hover:border-[#FF6600]/60', iconClassName: 'text-[#FF6600]' },
   'Chatwoot': { icon: SiChatwoot, className: 'bg-[#1F93FF]/20 text-[#1F93FF] border-[#1F93FF]/30 hover:bg-[#1F93FF]/30 hover:border-[#1F93FF]/60', iconClassName: 'text-[#1F93FF]' },
   'AI Agents (GPT, Gemini e DeepSeek)': { icon: FaRobot, className: 'bg-[#4F93FF]/20 text-[#1F93FF] border-[#1F93FF]/30 hover:bg-[#1F93FF]/30 hover:border-[#1F93FF]/60', iconClassName: 'text-[#1F93FF]' },
+  'Google Services': { icon: SiGoogle, className: 'bg-[#f2f3f5]/20 text-[#1F93FF] border-[#1F93FF]/30 hover:bg-[#1F93FF]/30 hover:border-[#1F93FF]/60', iconClassName: 'text-[#1F93FF]' },
   
   'default': { icon: Zap, className: 'bg-muted/40 text-foreground/80 border border-transparent hover:border-accent/50 backdrop-blur-sm', iconClassName: 'text-inherit' }
 };
@@ -42,7 +43,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       {/* Removido o título e subtítulo da seção */}
       <div className="mb-10 md:mb-12 px-6 md:px-10 lg:px-16"> {/* Increased horizontal padding */}
         {/* Project Title */}
-        <h2 className="text-2xl md:text-xl font-bold text-foreground mb-6 text-center md:text-left">
+        <h2 className="text-3xl md:text-2xl font-bold text-foreground mb-6 text-center md:text-left">
           {project.title}
         </h2>
         {/* Grid layout for 60/40 split */}
@@ -55,7 +56,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                <CardHeader className="pb-2 pt-3 px-4">
                  <CardTitle className="flex items-center text-lg font-semibold text-primary mb-2">
                    <FileText className="w-4 h-4 mr-1.5 flex-shrink-0" />
-                   Description
+                   Descrição
                  </CardTitle>
                </CardHeader>
                <CardContent className="pb-3 pt-0 px-4">
@@ -68,7 +69,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                <CardHeader className="pb-2 pt-3 px-4">
                   <CardTitle className="flex items-center text-lg font-semibold text-primary mb-2">
                    <ListChecks className="w-4 h-4 mr-1.5 flex-shrink-0" />
-                    Key Features
+                   Funcionalidades Principais
                  </CardTitle>
                </CardHeader>
                <CardContent className="pb-3 pt-0 px-4">
@@ -136,6 +137,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                       />
                       {/* Image overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 opacity-70 group-hover/card:opacity-50 transition-opacity duration-300 z-[2]"></div>
+                      {/* Badge/Button in bottom-left */}
+                      {project.imageBadgeText && (
+                        <span
+                          className="absolute left-3 bottom-3 z-[3] px-3 py-1 rounded-md bg-gray-800/90 text-xs font-semibold text-white shadow pointer-events-none select-none"
+                        >
+                          {project.imageBadgeText}
+                        </span>
+                      )}
                     </div>
                   </a>
                 </CardContent>
@@ -146,7 +155,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                <CardHeader className="pb-2 pt-3 px-4">
                  <CardTitle className="flex items-center text-lg font-semibold text-primary">
                    <Briefcase className="w-4 h-4 mr-1.5 flex-shrink-0" />
-                    Potential Impact
+                    Benefícios Principais
                   </CardTitle>
                 </CardHeader>
                <CardContent className="pb-3 pt-0 px-4">

@@ -128,7 +128,7 @@ const HeaderSection: React.FC = () => {
 						aria-label="See my projects"
 					>
 						<span className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-blue-500 transition-all duration-300"></span> {/* Animated border */}
-						<span className="relative z-10 group-hover:scale-105 transition-transform duration-300">See my Projects</span>
+						<span className="relative z-10 group-hover:scale-105 transition-transform duration-300">Portfólio</span>
 					</Button>
 				</div>
 			</header>

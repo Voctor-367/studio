@@ -2,7 +2,7 @@ import type { Project } from '@/types';
 import { Cloud, Database, GitMerge, BarChart, Brain } from 'lucide-react';
 import { IoLogoPython } from "react-icons/io5";
 
-import { SiPubmed, SiOpenai, SiStreamlit, SiRedis, SiGoogle, SiSupabase, SiWhatsapp, SiN8N, SiDocker, SiRabbitmq, SiChatwoot  } from "react-icons/si";
+import { SiPubmed, SiOpenai, SiStreamlit, SiRedis, SiGoogle, SiSupabase, SiWhatsapp, SiN8N, SiDocker, SiRabbitmq, SiChatwoot } from "react-icons/si";
 import { VscAzure } from "react-icons/vsc";
 import { FaRobot } from "react-icons/fa6";
 
@@ -36,13 +36,14 @@ export const projects: Project[] = [
       { name: 'Azure', icon: VscAzure },
 
     ],
+    imageBadgeText: 'Explorar documentação',
   },
   {
     id: '2',
     title: 'Agente de IA para Consultoria de Consórcios',
     imageUrl: taskMasterImage.src, // Use imported image
     imageAlt: 'Project Management Tool dashboard',
-    link: 'https://github.com/Voctor-367/BioLitExplorer.git',
+    link: 'https://kroki.io/mermaid/svg/eNq9WM1u20YQvvcpFgpSJAJd_1BSawUooNhOYiBGHCtID0YOK3IpLUJylSWpuKl76KMkOQQo0FPRS696sc7MLsklxaSWi1QGLHFnd-bb-flml3PNlwv24vgbBp-7d9mRSpYqFWkuMhYKdpLmmod8d8rXf4ScJv0kZgulXl_2rGxcjrAddiECMRMsEWnG5_CPhYoVWbF-r6XqvWI7Oz-yCz6byfzsOekqrZaDbMk1Z3OhRRpIDmpyhSgiGfMM1B_LlczWHxVbKs1yuSShNZaQrlLRZa_fL3_3-7D0cbdOwZZCZzLL17-j1NGXZhbwI5j4Qlzl6rKHP8fszBpkNNp71TBcLZkUodxcsv4Nhz-35jTBSRuLzLBdVLlMhDJjgUoUmxVRJLTxXQAR6XZNtQ8y95DWkJLLez36HtvBhhPAdUc8WAiWC0gMbSJ5_1WlkbbZ1lhJDfJOcbmPZ_pNITLMJIjpkcCcitlSq0BkGWccd5VLjYlUr3V0kW5XB0a-DDaqdDfTyARwFe5LsIzHK85StYJ8-EzmNhBPdMLfibRKpUimMpcrBSrYucryuRbT509pdmNziNTKsyeQckrLQIHz-_1pMeMznokxw_H1nyjYBN62C8FPV5C9PCsDsqHdZJaChTmvTYLFc-NgNcaSLaAGuGOarL3QsKYytWjgKg2blOPp-n0sM9Fy01SAVEim2NOnZ1OhVzIQZkEGOZZwzF4bbsGgrgseoznQHnOtSEu98B65CX-vPwFoEBDIZ0uRTk53H4sEYtC7f78G0N40eWIyRwP7NMH-RmeYn2OgFx6reSHYGU_B7ZpMnIYglJEMOINIQiAZFFjlAFGRFewziosrZbYYCtogJ80lk9Tbae1uA5yLkITTtzIPFr8A2GMREAdCtULGIB5Iu5MK2ZFFRtgvVC5sDAlVCZGH4k0BC3q_NiL2iIQ9UJHLtOBQjioWOZHiaRqhQ9ef1n_BdmiBgYTorv91xTV7KTQ5EQqBfO48E9SXPJYAH5J3CUkMUAsGbuUQ1wW3ieWquIE_3end60_SleR6ArlHNWF6HLSzBc-zyXK5e7JScZFLlRJCml0BhNh-liCsH4_Xf69gTxvesuPXGzl6XOD4Vy7PbqNOBh44yXfglsdUcA1bOAelicihhk-uoHoDUDM2_JRCDNGq0NBcWQMVIalLiZrV-gOo0SrbhS_oWqGiE8esyAK-RcEctAvmgITA8vwkmYkwlOm86dKHaIEONwmQrnGiyUGBLnmHOfuxLPOsiHPrSEIG5JWsP8A2kA_wEAEuwBaHJ5JqH9bVDQymjIslET1ZIuo_fjgGu-hENoV_goBgZdtALqDcTZih1TN0kQoKGiBvUbtHmODnoO7MDTtuEzhaFOnrrOkPK7K7Br1mEqS6ST0YIlTnGhm9msdE7T7joLI23HJo2HXC5jsR890se44NE2oO0il7CxULniMRQTjSTgmyGREgtu4y5wBVEEtU5MEoNBhjVpR87EToxgnmtxPMb9OL_98Jzd-O0Pzu9Q6h7X8NRgMyUhDv0OTABrE1xZv8RvL_md7IphPNgRPIgZt3gAkySNSkZlyET5I1GGoj17ZIpkE7mQaNY-F5zCFtgRiQFswDWjyqCpxYQKRawrmyJAY6KJZ53ToJWh0OA1gTHYyIFGbnT-wBwRT-UUWDMKOmPIRChhU5RnU5ZoMIHEDGAUPHGcNGQGAm9ZSf30Gv-ZZRJDG97MGs1W5qq3ipM1YM1u3KfdiO0NARjpzxkQv2AosozYS5P2cWot1zTQJwVYDjLjoOuYulbvreGOGojXDUpofRFwgpctn-y6Q02o6URt3rXVLqIBVwRpHYewFexHR966GJznLTQnHS5PQsa3V1Gq_uzOb4K-YSL1_VPRh7-ukE-8WMp4ZM3H7tIm3ZMlRXPXbf5Rq7O4XA6JVIjaOfFAncKUhWCgKuzOhl42rTta7f7zwCfwecO4UsEugCou3rTe0dneJW60bbrCudAPcSGVcnqkTEC4WvjEgM17wsOxYRhCCnwwqWazy-Ew2CIIo8CJx6LcZ3Dg99Pwjs485bGeaL8cHyygtUDAfPO77ve1oVwArhONeFeNDUrekdgVUczUbBfqU4ikb-D4PbKqabnVU888NDB7HvH9aPWyvObHGVmAG172AOgr29pmr_xqqhfRitwX6053hiEPBouHdbwCFeSPHAViIOgipe-DiEz411e9mCL8U4lDxRadiyZN8KWUNihH-VoRF9bruJFSW60FY3xPP7mah0Dw-CwT6_rW5o1UUdT7HXiOfh4d62nq-1b1KQ12z8XvMiUFaaA7DxLo2qxRXaVxCevVnZb99-D-z30Cv7EFWFq6DuFt4GU5Sp7s63r5I9h4q9Bi1L5U63h88yBV1R-yDodV98vc4Do9e4unmNS4zXOMl4TlOw-emicAnbc1nYa1BrmX7u0vLtsFe9uPWqF66e83KV0uvBP4ok_Ac',
     description: 'Um Agente de IA conversacional projetado para simplificar e personalizar a jornada de escolha de consórcios. Focada em oferecer orientação precisa 24/7, qualificar leads e otimizar a eficiência das equipes de vendas, utilizando lógica de recomendação baseada em regras de negócio, documentos internos e perfil de cada lead.',
     features: [
       'Gestão de Diálogo Inteligente: Coleta informações do perfil do cliente de forma conversacional e natural (via WhatsApp/outros).',
@@ -67,7 +68,7 @@ export const projects: Project[] = [
       { name: 'Whatsapp API', icon: SiWhatsapp },
       { name: 'Chatwoot', icon: SiChatwoot },
     ],
-    
+    imageBadgeText: 'Visualizar arquitetura',
   },
   {
     id: '3',
@@ -98,6 +99,7 @@ export const projects: Project[] = [
       { name: 'Whatsapp API', icon: SiWhatsapp },
       { name: 'Chatwoot', icon: SiChatwoot },
     ], 
+    imageBadgeText: 'Explorar documentação',
   },
 
    {
@@ -122,6 +124,7 @@ export const projects: Project[] = [
     ],
     techStack: [
       { name: 'N8N', icon: SiN8N },
+      { name: 'Google Services', icon: SiGoogle },
       { name: 'RabbitMQ', icon: SiRabbitmq },
       { name: 'Docker', icon: SiDocker },
       { name: 'Supabase', icon: SiSupabase },
@@ -130,5 +133,6 @@ export const projects: Project[] = [
       { name: 'Whatsapp API', icon: SiWhatsapp },
       { name: 'Chatwoot', icon: SiChatwoot },
     ],
+    imageBadgeText: 'Explorar documentação',
   },
 ];
