@@ -10,6 +10,7 @@ export interface Project {
   title: string;
   imageUrl: string;
   imageAlt: string;
+  link: string;
   description: string;
   features: string[];
   impact: string;

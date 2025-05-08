@@ -1,139 +1,134 @@
 import type { Project } from '@/types';
-import { Code, Database, Cloud, Activity, BarChart, Users, Briefcase, Brain, Settings, GitMerge, Bot, Aperture, Type, Feather, Package, PackagePlus } from 'lucide-react';
-import type React from 'react';
+import { Cloud, Database, GitMerge, BarChart, Brain } from 'lucide-react';
+import { IoLogoPython } from "react-icons/io5";
 
-// Custom SVG Icons
-const ReactIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <circle cx="12" cy="12" r="2"></circle><path d="M16.24 7.76a6 6 0 0 1 0 8.48m-8.48 0a6 6 0 0 1 0-8.48m5.65-2.83a10 10 0 0 1 0 14.14m-11.3 0a10 10 0 0 1 0-14.14"></path>
-  </svg>
-);
-const NextJsIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="M9 4h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"></path><path d="M12 12L12 12"></path>
-  </svg>
-);
-const TailwindIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="M17.5 19.5c-1.5-1.5-2-4-2.5-6 .5-2 1-4.5 2.5-6 .5 2 1.5 4.5 4 6.5-2.5 2-3.5 4.5-4 6.5zM7.5 4.5C9 6 9.5 8.5 10 10.5c-.5 2-1 4.5-2.5 6-.5-2-1.5-4.5-4-6.5 2.5-2 3.5-4.5 4-6.5z"></path>
-  </svg>
-);
-const NodeJsIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="M10.05 4.05L4.05 10.05c-2.73 2.73-2.73 7.17 0 9.9l9.9-9.9c2.73-2.73 2.73-7.17 0-9.9zM13.95 19.95l9.9-9.9c2.73-2.73 2.73-7.17 0-9.9l-9.9 9.9c-2.73 2.73-2.73 7.17 0 9.9z"></path>
-  </svg>
-);
-const VueJsIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="M2 10l6 8 6-8-3-5H5zM16 10l6 8"></path>
-  </svg>
-);
-const PythonIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-   <svg viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="M10.64,17.56,7.75,14.67a1,1,0,0,1,0-1.41h0a1,1,0,0,1,1.41,0L12,16.12V5a1,1,0,0,1,1-1h0a1,1,0,0,1,1,1V16.12l2.83-2.86a1,1,0,0,1,1.41,0h0a1,1,0,0,1,0,1.41l-2.89,2.89A3,3,0,0,1,10.64,17.56Z"></path><path d="M17,6H7"></path>
-  </svg>
-);
+import { SiPubmed, SiOpenai, SiStreamlit, SiRedis, SiGoogle, SiSupabase, SiWhatsapp, SiN8N, SiDocker, SiRabbitmq, SiChatwoot  } from "react-icons/si";
+import { VscAzure } from "react-icons/vsc";
+import { FaRobot } from "react-icons/fa6";
 
+import shopSphereImage from '@/assets/BioLitExplorer.png';
+import taskMasterImage from '@/assets/BioLitExplorer.png';
+import insightAIImage from '@/assets/BioLitExplorer.png';
+import connectHubImage from '@/assets/BioLitExplorer.png';
 
 export const projects: Project[] = [
   {
     id: '1',
-    title: 'E-commerce Platform "ShopSphere"',
-    imageUrl: 'https://picsum.photos/seed/shopsphere/800/600',
+    title: 'BioLit Explorer 🧬🔬',
+    imageUrl: shopSphereImage.src, // Use imported image
     imageAlt: 'E-commerce Platform online store',
-    description: 'A modern e-commerce platform with a focus on user experience and scalability. Built with cutting-edge technologies for optimal performance and seamless integrations.',
+    link: 'https://github.com/Voctor-367/BioLitExplorer.git',
+    description: 'Um co-piloto de pesquisa movido por IA que impulsiona a descoberta biomédica. O BioLit Explorer integra de forma inteligente a análise interativa de dados experimentais com a exploração profunda e contextualizada da literatura científica, permitindo que pesquisadores formulem hipóteses robustas e acelerem seus avanços numa fração do tempo.',
     features: [
-      'Product catalog management with advanced filtering and search capabilities.',
-      'Secure payment gateway integration supporting multiple providers (Stripe, PayPal).',
-      'Robust user authentication, profiles, and order history.',
-      'Real-time order tracking system with notifications.',
-      'Comprehensive admin dashboard for analytics, inventory, and customer management.',
-      'Fully responsive design ensuring optimal viewing on all devices.',
+      'Interface Conversacional Integrada: Interaja com agentes de IA especializados em análise de dados e exploração da literatura científica em um ambiente único e intuitivo.',
+      'Análise de Dados com IA Generativa: Faça perguntas em linguagem natural sobre seus datasets (CSV); a IA (GPT 4.1) executa código Python  para fornecer respostas, tabelas e visualizações gráficas.',
+      'Interpretação Multimodal de Gráficos: Capacidade de analisar imagens de gráficos (ex: plots de expressão, curvas de sobrevida) e, combinando essa informação visual com conhecimento de domínio, fornecer interpretações e insights relevantes.',
+      'Busca Contextualizada na Literatura (PubMed): Obtenha artigos científicos relevantes do PubMed, com buscas direcionadas pelos seus dados e objetivos de pesquisa.',
+      'Especialidade Fluida" para Análises: Coleta contexto inicial do usuário (objetivo, tipo de dados) para adaptar dinamicamente os prompts e as estratégias de análise, tornando a ferramenta poderosa para diversos estudos biomédicos.',
     ],
-    impact: 'Empowers businesses to establish a robust online presence, reach a wider customer base, and streamline sales operations, leading to increased revenue and customer satisfaction.',
+    impacts: ['O BioLit Explorer redefine o fluxo de trabalho do pesquisador biomédico, acelerando o ciclo da coleta de dados à formulação de hipóteses,  democratizando análises avançadas – incluindo a interpretação de gráficos – através da linguagem natural com suporte de IA, capacitando assim uma gama mais ampla de cientistas. Ao conectar rapidamente achados experimentais à literatura científica mais pertinente do PubMed, a plataforma eleva a qualidade e profundidade dos insights, permitindo a identificação de padrões sutis, a validação de resultados e a descoberta de novas linhas de investigação que poderiam ser perdidas manualmente. Adicionalmente, ao filtrar o ruído de um volume imenso de publicações científicas, o BioLit Explorer reduz a sobrecarga cognitiva e, ao simplificar barreiras técnicas e temporais, fomenta um ambiente de inovação, onde mais hipóteses podem ser exploradas e descobertas disruptivas tornam-se mais prováveis.',],
     techStack: [
-      { name: 'React', icon: ReactIcon },
-      { name: 'Next.js', icon: NextJsIcon },
-      { name: 'Tailwind CSS', icon: TailwindIcon },
-      { name: 'Node.js', icon: NodeJsIcon },
-      { name: 'PostgreSQL', icon: Database },
-      { name: 'AWS', icon: Cloud },
-      { name: 'TypeScript', icon: Type },
+      { name: 'Python', icon: IoLogoPython },
+      { name: 'LangGraph', icon: GitMerge },
+      { name: 'Streamlit', icon: SiStreamlit  },
+      { name: 'PubMed API', icon: SiPubmed },
+      { name: 'GPT 4.1', icon: SiOpenai },
+      { name: 'Azure', icon: VscAzure },
+
     ],
   },
   {
     id: '2',
-    title: 'Project Management Tool "TaskMaster"',
-    imageUrl: 'https://picsum.photos/seed/taskmaster/800/600',
+    title: 'Agente de IA para Consultoria de Consórcios',
+    imageUrl: taskMasterImage.src, // Use imported image
     imageAlt: 'Project Management Tool dashboard',
-    description: 'A collaborative project management tool designed to help teams organize tasks, track progress, and improve productivity. Features intuitive UI and real-time updates.',
+    link: 'https://github.com/Voctor-367/BioLitExplorer.git',
+    description: 'Um Agente de IA conversacional projetado para simplificar e personalizar a jornada de escolha de consórcios. Focada em oferecer orientação precisa 24/7, qualificar leads e otimizar a eficiência das equipes de vendas, utilizando lógica de recomendação baseada em regras de negócio, documentos internos e perfil de cada lead.',
     features: [
-      'Intuitive task creation, assignment, and prioritization.',
-      'Multiple project views: Kanban boards, Gantt charts, and list views.',
-      'Real-time collaboration features including comments, file sharing, and @mentions.',
-      'Advanced progress tracking with burn-down charts and custom reporting.',
-      'Customizable workflows and project templates to fit various team needs.',
-      'Seamless integration with calendars (Google Calendar, Outlook) and communication tools (Slack, Microsoft Teams).',
+      'Gestão de Diálogo Inteligente: Coleta informações do perfil do cliente de forma conversacional e natural (via WhatsApp/outros).',
+      'Resposta a Dúvidas com Base em Documentos (RAG): Responde perguntas específicas sobre regras, taxas e processos utilizando a documentação oficial dos planos como fonte (via RAG por ranqueamento semântico e filtragem por metadados)',
+      'Motor de Recomendação Personalizado: Analisa o perfil do cliente e compara com os planos disponíveis (filtrados por regras de negócio) para sugerir a opção mais adequada.',
+      'Arquitetura Multiagente Modular: Sistema composto por agentes especializados (diálogo, extração, análise, resposta), facilitando manutenção e evolução.',
+      'Monitoramento para Intervenção Humana: Permite uma transição suave para atendimento humano em casos complexos ou a pedido, utilizando integração com CRM para fornecer contexto completo ao agente humano. ',
+      'Integrações com Estratégias de Prospecção: Permite incluir módulos como follow-ups inteligentes em conversas pausadas e ações focadas em aumentar o valor do ciclo de vida do cliente (LTV).',
     ],
-    impact: 'Enhances team collaboration, improves project visibility, and boosts overall efficiency by providing a centralized platform for managing projects from initiation to completion.',
+    impacts: [
+      'Para Clientes: Simplifica um processo de decisão tipicamente complexo e demorado. O cliente recebe orientação personalizada instantânea (24/7), respostas precisas às suas dúvidas e recomendações alinhadas ao seu perfil, resultando em maior confiança e satisfação na escolha do consórcio ideal',
+      'Para o Negócio (Administradoras): Libera consultores humanos para focarem em vendas complexas e relacionamento, enquanto a IA qualifica leads e responde a perguntas frequentes. Isso aumenta a eficiência operacional, acelera o ciclo de vendas e eleva as taxas de conversão.',
+      'Potencial no Setor de Consórcios: A capacidade da IA de analisar perfis, comparar planos complexos e fornecer informações precisas baseadas em documentos oficiais resolve gargalos específicos da indústria, oferecendo um potencial expressivo para otimizar a aquisição de clientes e a eficiência das vendas neste mercado.',
+    ],
     techStack: [
-      { name: 'Vue.js', icon: VueJsIcon },
-      { name: 'Firebase', icon: Cloud },
-      { name: 'Express.js', icon: Settings },
-      { name: 'MongoDB', icon: Database },
-      { name: 'GraphQL', icon: GitMerge },
-      { name: 'Jest', icon: Activity },
-      { name: 'Cypress', icon: Aperture },
+      { name: 'N8N', icon: SiN8N },
+      { name: 'RabbitMQ', icon: SiRabbitmq },
+      { name: 'Docker', icon: SiDocker },
+      { name: 'Supabase', icon: SiSupabase },
+      { name: 'AI Agents (GPT, Gemini e DeepSeek)', icon: FaRobot },
+      { name: 'Redis', icon: SiRedis },
+      { name: 'Whatsapp API', icon: SiWhatsapp },
+      { name: 'Chatwoot', icon: SiChatwoot },
     ],
+    
   },
   {
     id: '3',
-    title: 'AI-Powered Analytics Dashboard "InsightAI"',
-    imageUrl: 'https://picsum.photos/seed/insightai/800/600',
+    title: 'ElizIA - Automação Inteligente para Atendimento Farmacêutico',
+    imageUrl: insightAIImage.src, // Use imported image
     imageAlt: 'AI Analytics Dashboard charts',
-    description: 'An intelligent analytics dashboard that leverages machine learning to provide deep insights from complex datasets. Helps businesses make data-driven decisions.',
+    link: 'https://github.com/Voctor-367/BioLitExplorer.git',
+    description: 'ElizIA é uma solução de automação desenvolvida para agilizar o ciclo de vendas B2B, aumentar a capacidade de processamento de pedidos e melhorar a acurácia das informações para distribuidoras e fabricantes de produtos farmacêuticos, com foco em otimizar o processo de cotação e fechamento de pedidos junto a seus clientes diretos: prescritores, farmácias e manipuladores. A ElizIA é projetada com a capacidade crucial de integração com sistemas ERP (Enterprise Resource Planning). Essa integração permite consultas de estoque em tempo real e a automatização de etapas subsequentes do processamento de pedidos, desde a verificação de disponibilidade até o encaminhamento para faturamento e logística.',
     features: [
-      'Dynamic data visualization with interactive charts, graphs, and heatmaps.',
-      'Suite of predictive analytics models for forecasting and trend analysis.',
-      'Natural Language Processing (NLP) for querying data using plain English.',
-      'Automated report generation and scheduling with customizable templates.',
-      'Real-time anomaly detection and alert system for critical metrics.',
-      'Role-based access control and customizable dashboards for different user roles.',
+      'Integração com plataformas de mensagens (ChatWoot) e API do WhatsApp para comunicação.',
+      'Recomendação Personalizada e Oportuna (UpSell Estratégico): O agente de IA avalia o contexto da conversa, os produtos de interesse do cliente e as regras de negócio pré-definidas, e com base nessa análise, a IA identifica e oferece, no momento certo da interação, produtos complementares relevantes, apresentações com melhor custo-benefício (ex: embalagens maiores), ou alternativas de maior valor agregado.',
+      'Follow-Up Automatizado: Identifica oportunidades e realiza acompanhamento proativo para fechar pedidos no mesmo dia, garantindo que nenhuma solicitação seja perdida.',
+      'Análise de Comportamento: Utiliza IA (DeepSeek) para analisar o comportamento do atendente e acionar suporte humano quando necessário.',
     ],
-    impact: 'Transforms raw data into actionable intelligence, enabling organizations to identify trends, predict outcomes, and optimize strategies for growth and operational excellence.',
+    impacts: [
+      'Reduz o tempo médio de atendimento e o custo por interação, permitindo escalar a operação sem um aumento proporcional nos custos.',
+      'Automatiza o atendimento de um alto volume de consultas e pedidos rotineiros, liberando a equipe humana para focar em negociações complexas, relacionamento estratégico e resolução de problemas críticos.',
+      'Maximização do Ticket Médio: Através do upsell inteligente e contextual, a ElizIA identifica e aproveita oportunidades para oferecer produtos adicionais ou de maior valor, aumentando diretamente a receita por pedido.',
+      'Consistência no Atendimento: Garante um padrão de qualidade e informação em todas as interações automatizadas.',
+    ],
     techStack: [
-      { name: 'Python', icon: PythonIcon },
-      { name: 'Flask', icon: Feather },
-      { name: 'TensorFlow', icon: Brain },
-      { name: 'D3.js', icon: BarChart },
-      { name: 'Apache Kafka', icon: PackagePlus },
-      { name: 'Elasticsearch', icon: Database },
-      { name: 'Docker & Kubernetes', icon: Package },
-    ],
+      { name: 'N8N', icon: SiN8N },
+      { name: 'RabbitMQ', icon: SiRabbitmq },
+      { name: 'Docker', icon: SiDocker },
+      { name: 'Supabase', icon: SiSupabase },
+      { name: 'AI Agents (GPT, Gemini e DeepSeek)', icon: FaRobot },
+      { name: 'Redis', icon: SiRedis },
+      { name: 'Whatsapp API', icon: SiWhatsapp },
+      { name: 'Chatwoot', icon: SiChatwoot },
+    ], 
   },
+
    {
     id: '4',
-    title: 'Social Networking App "ConnectHub"',
-    imageUrl: 'https://picsum.photos/seed/connecthub/800/600',
+    title: 'AI Agent - Tutor Religioso',
+    imageUrl: connectHubImage.src, // Use imported image
     imageAlt: 'Social Networking App user profiles',
-    description: 'A dynamic social networking application designed to connect users with shared interests. Features real-time chat, content sharing, and community building.',
+    link: 'https://github.com/Voctor-367/BioLitExplorer.git',
+    description: 'Um Agente de IA construído como um assistente dedicado aos mentores do serviço de ensino religioso de uma igreja. O agente tem como objetivo otimizar o gerenciamento do ensino, automatizar tarefas administrativas, facilitar o acesso rápido e interativo a conteúdos bíblicos e fornecer insights sobre o progresso dos alunos.',
     features: [
-      'Rich user profiles with customizable sections and privacy settings.',
-      'Real-time messaging (one-on-one and group chats) with multimedia support.',
-      'Advanced content posting capabilities (text, images, videos, polls).',
-      'AI-driven recommendations for interest-based groups and connections.',
-      'Integrated event scheduling, RSVPs, and calendar synchronization.',
-      'Push notification system for important updates and interactions.',
+      'Lembretes Automatizados: Geração e envio programado de lembretes semanais aos alunos sobre leituras e atividades de estudo, ajudando a manter o engajamento e a disciplina no programa de ensino.',
+      'Recuperação de Informações: Utiliza Naive RAG para extrair respostas e informações relevantes diretamente de arquivos PDF (como materiais de estudo, comentários bíblicos) carregados no sistema. Isso permite que mentores e alunos obtenham rapidamente informações específicas.',
+      'Suporte Interativo a Dúvidas: O agente responde a perguntas sobre passagens bíblicas, doutrinas e outros tópicos específicos do conteúdo estudado, agindo como uma primeira linha de suporte informativo.',
+      'Geração de Relatórios de Desempenho: Consolida informações sobre a participação dos alunos, conclusão de tarefas ou outros indicadores de progresso e gera relatórios para o mentor.',
+      'Conexão com Planilhas e Bancos de Dados: Capacidade de se integrar com planilhas (ex: Google Sheets) ou bancos de dados para buscar informações dos estudos, alunos e para registrar dados de progresso/interações, centralizando informações e facilitando a gestão do mentor.',
     ],
-    impact: 'Facilitates community building and fosters connections by providing a platform for users to interact, share experiences, and engage with like-minded individuals.',
+    impacts: [
+      'Reduz significativamente o tempo gasto em tarefas administrativas e repetitivas (envio de lembretes, busca manual por informações em materiais extensos, compilação de dados de progresso).',
+      'Recurso para consultas, especialmente útil para mentores que podem ter muitas demandas ou para alunos que precisam de esclarecimentos imediatos.',
+      'Os relatórios de desempenho permitem que os mentores identifiquem rapidamente alunos que estão progredindo bem ou aqueles que podem estar enfrentando dificuldades, possibilitando intervenções mais direcionadas e eficazes.',
+      'Funciona como uma ferramenta de apoio que capacita os mentores, especialmente aqueles com menos tempo disponível ou que gerenciam múltiplos grupos, a exercerem seu papel com maior eficácia e menor sobrecarga.',
+    ],
     techStack: [
-      { name: 'React Native', icon: ReactIcon },
-      { name: 'GraphQL', icon: GitMerge },
-      { name: 'Apollo Server', icon: Settings },
-      { name: 'AWS Amplify', icon: Cloud },
-      { name: 'PostgreSQL', icon: Database },
-      { name: 'Redis', icon: Bot },
-      { name: 'WebSockets', icon: Users },
+      { name: 'N8N', icon: SiN8N },
+      { name: 'RabbitMQ', icon: SiRabbitmq },
+      { name: 'Docker', icon: SiDocker },
+      { name: 'Supabase', icon: SiSupabase },
+      { name: 'AI Agents (GPT, Gemini e DeepSeek)', icon: FaRobot },
+      { name: 'Redis', icon: SiRedis },
+      { name: 'Whatsapp API', icon: SiWhatsapp },
+      { name: 'Chatwoot', icon: SiChatwoot },
     ],
   },
 ];
