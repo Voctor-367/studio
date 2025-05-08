@@ -36,6 +36,8 @@ export default function RootLayout({
 }
 
 // next.config.js
+/** @type {import('next').NextConfig} */
 module.exports = {
-  basePath: '/portfolio', 
+  basePath: '/portfolio',
+  // ...outros ajustes se necessário...
 };
