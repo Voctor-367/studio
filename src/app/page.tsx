@@ -2,14 +2,8 @@ import ProjectCard from '@/components/project-card';
 import { projects } from './data';
 import HeaderSection from '@/components/header-section'; // Import the new client component
 import Footer from '@/components/footer'; // Import the new footer component
-import type { Metadata } from 'next';
 import dottedTexture from '@/assets/dotted-texture.jpg'; // Import the texture
 
-// Updated metadata specific to the Home page
-export const metadata: Metadata = {
-  title: 'FolioFlow - Home',
-  description: 'Welcome to FolioFlow. Explore a collection of my projects showcasing skills in modern web development.',
-};
 
 
 export default function Home() {

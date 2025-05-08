@@ -10,9 +10,10 @@ export interface Project {
   title: string;
   imageUrl: string;
   imageAlt: string;
+  imageBadgeText: string;
   link: string;
   description: string;
   features: string[];
-  impact: string;
+  impacts: string[];
   techStack: TechStackItem[];
 }

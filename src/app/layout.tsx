@@ -12,8 +12,8 @@ const oxaniumFont = Oxanium({
 });
 
 export const metadata: Metadata = {
-  title: 'FolioFlow - Showcase Your Projects',
-  description: 'FolioFlow: A personal portfolio showcasing innovative projects built with modern technologies.',
+  title: 'Portfolio',
+  description: 'My Portfolio',
 };
 
 export default function RootLayout({
