@@ -36,11 +36,11 @@ const differentialsData = [
 const DifferentialsSection: React.FC<{ className?: string }> = ({ className }) => {
 	return (
 		<section className={`w-full pt-8 pb-12 ${className}`}>
-			<div className="container mx-auto px-8 md:px-32">
-				<h2 className="text-3xl md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-blue-500 to-blue-900 mt-12 mb-4 text-center">
+			<div className="container mx-auto px-4 sm:px-8 md:px-32">
+				<h2 className="text-xl sm:text-2xl md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-blue-500 to-blue-900 mt-8 sm:mt-12 mb-2 sm:mb-4 text-center">
 					ABORDAGENS FUNDAMENTAIS
 				</h2>
-				<p className="text-lg md:text-xl text-muted-foreground text-center mb-16 leading-relaxed">
+				<p className="text-base sm:text-lg md:text-xl text-muted-foreground text-center mb-8 sm:mb-16 leading-relaxed">
         Personalização, integração abrangente, robustez e evolução contínua.
 				</p>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6">

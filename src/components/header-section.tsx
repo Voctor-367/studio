@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Bot } from 'lucide-react';
+import { ArrowRight, Bot, Menu } from 'lucide-react';
 import { RiListCheck3, RiCodeBoxLine, RiTestTubeLine, RiEyeLine   } from "react-icons/ri";
 import { MdOutlineDesignServices } from "react-icons/md";
 import DifferentialsSection from './differentials-section';
@@ -46,12 +46,16 @@ const methodologyStages = [
 ];
 
 const HeaderSection: React.FC = () => {
+	const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+
 	const handleScrollToProjects = () => {
 		document.getElementById('projects-section')?.scrollIntoView({ behavior: 'smooth' });
+		setMobileMenuOpen(false);
 	};
 	const handleScrollToHome = (e: React.MouseEvent<HTMLAnchorElement>) => {
 		e.preventDefault();
 		window.scrollTo({ top: 0, behavior: 'smooth' });
+		setMobileMenuOpen(false);
 	};
 
 	return (
@@ -61,10 +65,11 @@ const HeaderSection: React.FC = () => {
 				style={{ backgroundImage: `url(${dottedTexture.src})` }}
 			>
 				{/* Navigation Bar */}
-				<nav className="container mx-auto px-2 sm:px-4 py-3 sm:py-4 flex justify-between items-center border-b border-border/10 bg-background/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50">
+				<nav className="container mx-auto px-2 sm:px-4 py-3 sm:py-4 flex justify-between items-center border-b border-border/10 bg-background/60 backdrop-blur-[6px] fixed top-0 left-0 right-0 z-50">
 					<div className="flex items-center gap-2">
-						<Bot className="w-7 h-7 text-accent" /> {/* Using Bot icon as placeholder */}
+						<Bot className="w-7 h-7 text-accent" />
 					</div>
+					{/* Desktop Nav */}
 					<div className="hidden md:flex items-center space-x-6">
 						<a
 							href="#home"
@@ -94,7 +99,68 @@ const HeaderSection: React.FC = () => {
 							Contato
 						</a>
 					</div>
-					{/* Add Mobile Menu Button Here if needed */}
+					{/* Mobile Menu Button */}
+					<button
+						className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-accent bg-background/40"
+						onClick={() => setMobileMenuOpen((v) => !v)}
+						aria-label="Abrir menu"
+					>
+						<Menu className="w-7 h-7" />
+					</button>
+					{/* Mobile Nav Drawer */}
+					{mobileMenuOpen && (
+						<>
+							{/* Overlay */}
+							<div className="fixed inset-0 z-[60] bg-black/60 md:hidden" onClick={() => setMobileMenuOpen(false)} />
+							{/* Drawer */}
+							<div
+								className="fixed top-0 right-0 z-[70] w-3/4 max-w-xs h-screen shadow-lg flex flex-col pt-8 px-6 gap-6"
+								style={{
+									background: "rgba(16,22,40,0.97)",
+									backdropFilter: "blur(8px)",
+									WebkitBackdropFilter: "blur(8px)",
+								}}
+							>
+								<button
+									className="self-end mb-6 p-2 rounded focus:outline-none focus:ring-2 focus:ring-accent"
+									onClick={() => setMobileMenuOpen(false)}
+									aria-label="Fechar menu"
+								>
+									<svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+										<path d="M18 6L6 18M6 6l12 12" />
+									</svg>
+								</button>
+								<a
+									href="#home"
+									onClick={handleScrollToHome}
+									className="py-2 text-lg font-semibold hover:text-accent transition-colors"
+								>
+									Home
+								</a>
+								<a
+									href="#projects-section"
+									onClick={(e) => {
+										e.preventDefault();
+										handleScrollToProjects();
+									}}
+									className="py-2 text-lg font-semibold hover:text-accent transition-colors"
+								>
+									Projetos
+								</a>
+								<a
+									href="#footer"
+									onClick={(e) => {
+										e.preventDefault();
+										document.getElementById('footer')?.scrollIntoView({ behavior: 'smooth' });
+										setMobileMenuOpen(false);
+									}}
+									className="py-2 text-lg font-semibold hover:text-accent transition-colors"
+								>
+									Contato
+								</a>
+							</div>
+						</>
+					)}
 				</nav>
 
 				{/* Main Content Area */}
@@ -103,7 +169,7 @@ const HeaderSection: React.FC = () => {
 					style={{ minHeight: "calc(100vh - 80px)", paddingTop: "100px" }}
 				>
 					{/* Image Placeholder */}
-					<div className="w-full md:w-1/2 flex justify-center md:justify-end mb-8 md:mb-0">
+					<div className="w-full md:w-1/2 flex justify-center md:justify-end mb-2 sm:mb-4 md:mb-0">
 						<div className="relative w-full max-w-xs sm:max-w-md md:max-w-xl aspect-[16/10] rounded-lg overflow-hidden bg-card shadow-lg">
 							<Image
 								src={headerImage}

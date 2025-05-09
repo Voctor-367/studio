@@ -34,8 +34,8 @@ const TimelineStage: React.FC<{
       {/* Conteúdo */}
       <div className="ml-2 sm:ml-3 flex-1">
         <div className="bg-card rounded-lg p-2 sm:p-3 shadow-md w-[90vw] max-w-xs sm:max-w-[350px] border border-border/30 hover:shadow-lg hover:border-primary/50 transition-all duration-300 backdrop-blur-sm">
-          <h3 className="text-sm sm:text-base font-semibold">{stage.title}</h3>
-          <p className="text-xs sm:text-sm text-muted-foreground">{stage.description}</p>
+          <h3 className="text-xs sm:text-sm md:text-base font-semibold">{stage.title}</h3>
+          <p className="text-[11px] sm:text-xs md:text-sm text-muted-foreground">{stage.description}</p>
         </div>
       </div>
     </div>
@@ -49,7 +49,7 @@ export const MethodologyTimeline: React.FC<MethodologyTimelineProps> = ({
   return (
     <section className={cn("w-full flex flex-col items-center mb-10 sm:mb-20", className)}>
       {/* Título da seção */}
-      <h2 className="text-2xl sm:text-3xl md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-500 to-blue-900 mt-10 sm:mt-20 mb-2 sm:mb-4 text-center">
+      <h2 className="text-xl sm:text-2xl md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-500 to-blue-900 mt-8 sm:mt-20 mb-2 sm:mb-4 text-center">
         METODOLOGIA
       </h2>
       <p className="text-base sm:text-lg md:text-xl text-muted-foreground text-center mb-8 sm:mb-16">

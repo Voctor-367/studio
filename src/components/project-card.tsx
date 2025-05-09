@@ -44,50 +44,47 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       {/* Removido o título e subtítulo da seção */}
       <div className="mb-10 md:mb-12 px-6 md:px-10 lg:px-16"> {/* Increased horizontal padding */}
         {/* Project Title */}
-        <h2 className="text-3xl md:text-2xl font-bold text-foreground mb-6 text-center md:text-left">
+        <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-3 sm:mb-4 md:mb-6 text-center md:text-left">
           {project.title}
         </h2>
         {/* Grid layout for 60/40 split */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6"> {/* Reduced gap */}
-
-          {/* Left Column (Description, Features, Tech Stack) - lg:col-span-3 (60%) */}
-          <div className="lg:col-span-3 flex flex-col space-y-4 z-[5]"> {/* Added z-[5] */}
-             {/* Description Card - Adjusted background and border */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+          {/* Left Column */}
+          <div className="lg:col-span-3 flex flex-col space-y-4 z-[5]">
+             {/* Description Card */}
              <Card className="border-border/30 shadow-md transition-all duration-300 hover:shadow-lg hover:border-primary/30 backdrop-blur-sm bg-card/80">
                <CardHeader className="pb-2 pt-3 px-4">
-                 <CardTitle className="flex items-center text-lg font-semibold text-primary mb-2">
+                 <CardTitle className="flex items-center text-sm sm:text-base md:text-lg font-semibold text-primary mb-2">
                    <FileText className="w-4 h-4 mr-1.5 flex-shrink-0" />
                    Descrição
                  </CardTitle>
                </CardHeader>
                <CardContent className="pb-3 pt-0 px-4">
-                 <p className="text-sm text-foreground/80">{project.description}</p>
+                 <p className="text-[11px] sm:text-xs md:text-sm text-foreground/80">{project.description}</p>
                </CardContent>
              </Card>
-
-             {/* Features Card - Adjusted background and border */}
+             {/* Features Card */}
              <Card className="border-border/30 shadow-md transition-all duration-300 hover:shadow-lg hover:border-primary/30 backdrop-blur-sm bg-card/80">
                <CardHeader className="pb-2 pt-3 px-4">
-                  <CardTitle className="flex items-center text-lg font-semibold text-primary mb-2">
+                  <CardTitle className="flex items-center text-sm sm:text-base md:text-lg font-semibold text-primary mb-2">
                    <ListChecks className="w-4 h-4 mr-1.5 flex-shrink-0" />
                    Funcionalidades Principais
                  </CardTitle>
                </CardHeader>
                <CardContent className="pb-3 pt-0 px-4">
-                  <ul className="list-disc list-inside space-y-4">
+                  <ul className="list-disc list-inside space-y-2 sm:space-y-3 md:space-y-4">
                     {project.features.map((feature, index) => (
-                      <li key={index} className="text-sm text-foreground/80">
+                      <li key={index} className="text-[11px] sm:text-xs md:text-sm text-foreground/80">
                         {feature}
                       </li>
                     ))}
                   </ul>
                </CardContent>
              </Card>
-
-             {/* Tech Stack Card - Adjusted background and border */}
+             {/* Tech Stack Card */}
              <Card className="border-border/30 shadow-md transition-all duration-300 hover:shadow-lg hover:border-primary/30 backdrop-blur-sm bg-card/80">
                <CardHeader className="pb-2 pt-3 px-4">
-                 <CardTitle className="flex items-center text-lg font-semibold text-primary">
+                 <CardTitle className="flex items-center text-sm sm:text-base md:text-lg font-semibold text-primary">
                     <Package className="w-4 h-4 mr-1.5 flex-shrink-0" />
                     Tech Stack
                   </CardTitle>
@@ -107,7 +104,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                          )}
                        >
                          <Icon icon={displayInfo.icon} size={14} className={iconColorClass} />
-                         <span className={cn("text-[11px] font-medium", tech.name === 'JavaScript' ? 'text-black' : 'text-inherit')}>{tech.name}</span>
+                         <span className={cn("text-[9px] sm:text-[10px] md:text-[11px] font-medium", tech.name === 'JavaScript' ? 'text-black' : 'text-inherit')}>{tech.name}</span>
                        </Badge>
                      );
                    })}
@@ -115,10 +112,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 </CardContent>
              </Card>
           </div>
-
-          {/* Right Column (Image, Details/Impact) - lg:col-span-2 (40%) */}
+          {/* Right Column */}
          <div className="lg:col-span-2 flex flex-col space-y-4 z-[4]">
-             {/* Image Card - Adjusted background and border */}
+             {/* Image Card */}
              <Card className="border-border/30 shadow-md transition-all duration-300 hover:shadow-lg hover:border-primary/30 group/card backdrop-blur-sm mb-4 bg-card/80">
                 <CardContent className="p-0">
                   {/* Link wrapping the image */}
@@ -141,7 +137,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                       {/* Badge/Button in bottom-left */}
                       {project.imageBadgeText && (
                         <span
-                          className="absolute left-3 bottom-3 z-[3] px-3 py-1 rounded-md bg-gray-800/90 text-xs font-semibold text-white shadow pointer-events-none select-none"
+                          className="absolute left-3 bottom-3 z-[3] px-3 py-1 rounded-md bg-gray-800/90 text-[10px] sm:text-xs font-semibold text-white shadow pointer-events-none select-none"
                         >
                           {project.imageBadgeText}
                         </span>
@@ -150,19 +146,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   </a>
                 </CardContent>
               </Card>
-
-             {/* Project Details/Impact Card - Adjusted background and border */}
+             {/* Project Details/Impact Card */}
              <Card className="border-border/30 shadow-md transition-all duration-300 hover:shadow-lg hover:border-primary/30 backdrop-blur-sm bg-card/80">
                <CardHeader className="pb-2 pt-3 px-4">
-                 <CardTitle className="flex items-center text-lg font-semibold text-primary">
+                 <CardTitle className="flex items-center text-sm sm:text-base md:text-lg font-semibold text-primary">
                    <Briefcase className="w-4 h-4 mr-1.5 flex-shrink-0" />
                     Benefícios Principais
                   </CardTitle>
                 </CardHeader>
                <CardContent className="pb-3 pt-0 px-4">
-                <ul className="list-disc list-inside space-y-2">
+                <ul className="list-disc list-inside space-y-1 sm:space-y-2 md:space-y-3">
                     {project.impacts.map((impact: string, index: number) => (
-                      <li key={index} className="text-sm text-foreground/80">
+                      <li key={index} className="text-[11px] sm:text-xs md:text-sm text-foreground/80">
                       {impact}
                       </li>
                     ))}
