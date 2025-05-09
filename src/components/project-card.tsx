@@ -32,7 +32,7 @@ const techDisplayConfig: Record<string, { icon: LucideIcon | React.FC<SVGProps<S
   'Docker': { icon: SiDocker, className: 'bg-[#2496ED]/20 text-[#2496ED] border-[#2496ED]/30 hover:bg-[#2496ED]/30 hover:border-[#2496ED]/60', iconClassName: 'text-[#2496ED]' },
   'RabbitMQ': { icon: SiRabbitmq, className: 'bg-[#FF6600]/20 text-[#FF6600] border-[#FF6600]/30 hover:bg-[#FF6600]/30 hover:border-[#FF6600]/60', iconClassName: 'text-[#FF6600]' },
   'Chatwoot': { icon: SiChatwoot, className: 'bg-[#1F93FF]/20 text-[#1F93FF] border-[#1F93FF]/30 hover:bg-[#1F93FF]/30 hover:border-[#1F93FF]/60', iconClassName: 'text-[#1F93FF]' },
-  'AI Agents (GPT, Gemini e DeepSeek)': { icon: FaRobot, className: 'bg-[#4F93FF]/20 text-[#1F93FF] border-[#1F93FF]/30 hover:bg-[#1F93FF]/30 hover:border-[#1F93FF]/60', iconClassName: 'text-[#1F93FF]' },
+  "LLM's (GPT, Gemini e DeepSeek)": { icon: FaRobot, className: 'bg-[#4F93FF]/20 text-[#1F93FF] border-[#1F93FF]/30 hover:bg-[#1F93FF]/30 hover:border-[#1F93FF]/60', iconClassName: 'text-[#1F93FF]' },
   'Google Services': { icon: SiGoogle, className: 'bg-[#f2f3f5]/20 text-[#1F93FF] border-[#1F93FF]/30 hover:bg-[#1F93FF]/30 hover:border-[#1F93FF]/60', iconClassName: 'text-[#1F93FF]' },
   
   'default': { icon: Zap, className: 'bg-muted/40 text-foreground/80 border border-transparent hover:border-accent/50 backdrop-blur-sm', iconClassName: 'text-inherit' }
@@ -42,7 +42,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <div>
       {/* Removido o título e subtítulo da seção */}
-      <div className="mb-10 md:mb-12 px-6 md:px-10 lg:px-16">
+      <div className="mb-10 md:mb-12 px-2 sm:px-4 md:px-10 lg:px-16">
         {/* Project Title */}
         <h2 className="text-xl sm:text-2xl md:text-xl font-bold text-foreground mb-4 text-center md:text-left">
           {project.title}

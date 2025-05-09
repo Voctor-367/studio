@@ -10,7 +10,7 @@ interface AnimatedWordProps {
   interval?: number;
 }
 
-const HACK_CHARS = "█▓▒░▌▐▄▀■□▲△●○◆◇".split("");
+const HACK_CHARS = "█▓▒░▌▐▄▀▲△●○◆".split("");
 
 function randomizeWord(word: string) {
   return word
@@ -36,7 +36,7 @@ const AnimatedWord: React.FC<AnimatedWordProps> = ({ words, interval = 2000 }) =
       setTimeout(() => {
         setIndex((prev) => (prev + 1) % words.length);
         setAnimating(false);
-      }, 350);
+      }, 588); // 490 * 1.2 = 588ms
     }, interval);
     return () => clearInterval(timer);
   }, [words, interval]);
@@ -44,7 +44,7 @@ const AnimatedWord: React.FC<AnimatedWordProps> = ({ words, interval = 2000 }) =
   useEffect(() => {
     if (animating) {
       let frame = 0;
-      const maxFrames = 6;
+      const maxFrames = 10; // 8 * 1.2 = 9.6 ≈ 10
       const glitch = setInterval(() => {
         setDisplay(randomizeWord(getWord(words[index])));
         frame++;
@@ -52,7 +52,7 @@ const AnimatedWord: React.FC<AnimatedWordProps> = ({ words, interval = 2000 }) =
           clearInterval(glitch);
           setDisplay(getWord(words[(index + 1) % words.length]));
         }
-      }, 40);
+      }, 67); // 56 * 1.2 = 67ms
       return () => clearInterval(glitch);
     } else {
       setDisplay(getWord(words[index]));

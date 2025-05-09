@@ -185,7 +185,7 @@ const HeaderSection: React.FC = () => {
 
 					{/* Text Content */}
 					<div className="w-full md:w-1/2 text-center md:text-left mt-16 sm:mt-8 md:mt-12">
-						<h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold mb-2 md:mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-600 to-blue-800">
+						<h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 md:mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-600 to-blue-800">
 							Automação Inteligente para Impulsionar Seu{" "}
 							<AnimatedWord
 								words={[
