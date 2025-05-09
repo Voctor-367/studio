@@ -49,10 +49,10 @@ export const MethodologyTimeline: React.FC<MethodologyTimelineProps> = ({
   return (
     <section className={cn("w-full flex flex-col items-center mb-10 sm:mb-20", className)}>
       {/* Título da seção */}
-      <h2 className="text-xl sm:text-2xl md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-500 to-blue-900 mt-8 sm:mt-20 mb-2 sm:mb-4 text-center">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-500 to-blue-900 mt-16 sm:mt-20 mb-2 sm:mb-4 text-center">
         METODOLOGIA
       </h2>
-      <p className="text-base sm:text-lg md:text-xl text-muted-foreground text-center mb-8 sm:mb-16">
+      <p className="text-base sm:text-lg md:text-xl text-muted-foreground text-center mb-20 sm:mb-16">
         Da concepção à entrega: o guia para desenvolvimento de projetos.
       </p>
       <div className="relative flex flex-col items-start space-y-6 sm:space-y-8">

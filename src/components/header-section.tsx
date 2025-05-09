@@ -205,7 +205,7 @@ const HeaderSection: React.FC = () => {
 				</div>
 
 				{/* Centralized Button */}
-				<div className="w-full flex justify-center mt-16 sm:mt-10 md:mt-14 mb-4 md:mb-8">
+				<div className="w-full flex justify-center mt-16 sm:mt-10 md:mt-14 mb-16 md:mb-8">
 					<Button
 						size="lg"
 						className="relative text-blue-500 border border-blue-500 px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold tracking-wide transition-all duration-300 hover:text-blue-700 hover:shadow-[0_0_10px_rgba(59,130,246,0.5)] group bg-transparent"
