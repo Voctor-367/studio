@@ -53,7 +53,7 @@ export const MethodologyTimeline: React.FC<MethodologyTimelineProps> = ({
         METODOLOGIA
       </h2>
       <p className="text-base sm:text-lg md:text-xl text-muted-foreground text-center mb-8 sm:mb-16">
-        Da concepção à entrega: o guia para o sucesso do projeto.
+        Da concepção à entrega: o guia para desenvolvimento de projetos.
       </p>
       <div className="relative flex flex-col items-start space-y-6 sm:space-y-8">
         {/* Linha conectando todas as etapas */}

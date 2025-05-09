@@ -61,7 +61,7 @@ const HeaderSection: React.FC = () => {
 	return (
 		<>
 			<header
-				className="min-h-screen flex flex-col bg-cover bg-center text-foreground"
+				className="min-h-screen flex flex-col bg-cover bg-center text-foreground mb-0"
 				style={{ backgroundImage: `url(${dottedTexture.src})` }}
 			>
 				{/* Navigation Bar */}
@@ -165,12 +165,12 @@ const HeaderSection: React.FC = () => {
 
 				{/* Main Content Area */}
 				<div
-					className="flex-grow container mx-auto px-2 sm:px-4 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-20 py-10 md:py-24"
-					style={{ minHeight: "calc(100vh - 80px)", paddingTop: "100px" }}
+					className="container mx-auto px-2 sm:px-4 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-12 py-2 md:py-16"
+					style={{ paddingTop: "100px" }}
 				>
 					{/* Image Placeholder */}
-					<div className="w-full md:w-1/2 flex justify-center md:justify-end mb-2 sm:mb-4 md:mb-0">
-						<div className="relative w-full max-w-xs sm:max-w-md md:max-w-xl aspect-[16/10] rounded-lg overflow-hidden bg-card shadow-lg">
+					<div className="w-full md:w-1/2 flex justify-center md:justify-end mt-16 sm:mt-10 md:mt-0 mb-0">
+						<div className="relative w-full max-w-sm sm:max-w-md md:max-w-xl h-64 sm:h-72 md:h-auto md:aspect-[16/10] rounded-lg overflow-hidden bg-card shadow-lg">
 							<Image
 								src={headerImage}
 								alt="Abstract code background"
@@ -184,8 +184,8 @@ const HeaderSection: React.FC = () => {
 					</div>
 
 					{/* Text Content */}
-					<div className="w-full md:w-1/2 text-center md:text-left">
-						<h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 md:mb-12 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-600 to-blue-800">
+					<div className="w-full md:w-1/2 text-center md:text-left mt-16 sm:mt-8 md:mt-12">
+						<h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold mb-2 md:mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-600 to-blue-800">
 							Automação Inteligente para Impulsionar Seu{" "}
 							<AnimatedWord
 								words={[
@@ -198,14 +198,14 @@ const HeaderSection: React.FC = () => {
 								interval={3000}
 							/>
 						</h1>
-						<p className="text-base xs:text-lg sm:text-xl md:text-2xl text-muted-foreground mb-4 md:mb-6 max-w-xs xs:max-w-sm sm:max-w-xl mx-auto md:mx-0 leading-relaxed">
-							Desenvolvendo soluções personalizadas com IA para otimizar seus processos e aumentar a eficiência.
+						<p className="text-base xs:text-lg sm:text-xl md:text-2xl text-muted-foreground mb-2 md:mb-6 max-w-xs xs:max-w-sm sm:max-w-xl mx-auto md:mx-0 leading-relaxed">
+							Desenvolvendo soluções personalizadas com IA para otimizar processos e aumentar a eficiência.
 						</p>
 					</div>
 				</div>
 
 				{/* Centralized Button */}
-				<div className="w-full flex justify-center mt-0 mb-10 md:mb-16">
+				<div className="w-full flex justify-center mt-16 sm:mt-10 md:mt-14 mb-4 md:mb-8">
 					<Button
 						size="lg"
 						className="relative text-blue-500 border border-blue-500 px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold tracking-wide transition-all duration-300 hover:text-blue-700 hover:shadow-[0_0_10px_rgba(59,130,246,0.5)] group bg-transparent"
@@ -217,7 +217,8 @@ const HeaderSection: React.FC = () => {
 					</Button>
 				</div>
 			</header>
-			<div className="w-full h-[2px] sm:h-[3px] bg-gradient-to-r from-transparent via-blue-500 to-transparent blur-[1px] opacity-100"></div>
+			{/* Divisor */}
+			<div className="w-full h-[2px] sm:h-[3px] bg-gradient-to-r from-transparent via-blue-500 to-transparent blur-[1px] opacity-100 m-0 p-0" style={{ marginTop: 0, marginBottom: 0 }} />
 
 			<DifferentialsSection className="mb-16 sm:mb-24" />
 			<div className="w-full h-[2px] sm:h-[3px] bg-gradient-to-r from-transparent via-blue-500 to-transparent blur-[1px] opacity-100"></div>

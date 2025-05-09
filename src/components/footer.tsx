@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           <p className="text-xs sm:text-sm mb-6 sm:mb-8">
             Identificou uma oportunidade para aplicar estes serviços? Entre em contato:
           </p>
-          <div className="flex flex-row justify-center sm:justify-start items-center gap-4 sm:gap-8">
+          <div className="flex flex-row justify-center sm:justify-start items-center gap-12 xs:gap-6 sm:gap-10 md:gap-8">
             <a
               href="https://github.com/Voctor-367"
               target="_blank"
