@@ -78,7 +78,7 @@ export const projects: Project[] = [
     title: 'Elis - Automação Inteligente para Atendimento Farmacêutico',
     imageUrl: ElisImage.src, // Use imported image
     imageAlt: 'Elis - Intelligent Automation for Pharmaceutical Sales',
-    link: 'https://webhook.tiagoai.space/webhook/31e2cfc7-964f-4d23-a01d-fc7aa12c33d6/chat',
+    link: '',
     description: 'Elis é uma solução de automação desenvolvida para agilizar o ciclo de vendas B2B, aumentar a capacidade de processamento de pedidos e melhorar a acurácia das informações para distribuidoras e fabricantes de produtos farmacêuticos, com foco em otimizar o processo de cotação e fechamento de pedidos junto a seus clientes diretos: prescritores, farmácias e manipuladores. A Elis é projetada com a capacidade crucial de integração com sistemas ERP (Enterprise Resource Planning). Essa integração permite consultas de estoque em tempo real e a automatização de etapas subsequentes do processamento de pedidos, desde a verificação de disponibilidade até o encaminhamento para faturamento e logística.',
     features: [
       'Integração com plataformas de mensagens (ChatWoot) e API do WhatsApp para comunicação.',
