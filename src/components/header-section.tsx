@@ -58,10 +58,10 @@ const HeaderSection: React.FC = () => {
 		<>
 			<header
 				className="min-h-screen flex flex-col bg-cover bg-center text-foreground"
-				style={{ backgroundImage: `url(${dottedTexture.src})` }} // Use the imported texture
+				style={{ backgroundImage: `url(${dottedTexture.src})` }}
 			>
 				{/* Navigation Bar */}
-				<nav className="container mx-auto px-4 py-4 flex justify-between items-center border-b border-border/10 bg-background/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50">
+				<nav className="container mx-auto px-2 sm:px-4 py-3 sm:py-4 flex justify-between items-center border-b border-border/10 bg-background/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50">
 					<div className="flex items-center gap-2">
 						<Bot className="w-7 h-7 text-accent" /> {/* Using Bot icon as placeholder */}
 					</div>
@@ -98,28 +98,28 @@ const HeaderSection: React.FC = () => {
 				</nav>
 
 				{/* Main Content Area */}
-				<div className="flex-grow container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-20 py-16 md:py-24"
-					style={{ minHeight: "calc(100vh - 80px)", paddingTop: "120px" }} // paddingTop compensates nav height
+				<div
+					className="flex-grow container mx-auto px-2 sm:px-4 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-20 py-10 md:py-24"
+					style={{ minHeight: "calc(100vh - 80px)", paddingTop: "100px" }}
 				>
 					{/* Image Placeholder */}
-					<div className="w-full md:w-1/2 flex justify-center md:justify-end">
-						<div className="relative w-full max-w-xl aspect-[16/8] rounded-lg overflow-hidden bg-card shadow-lg"> {/* max-w-xl and aspect-[16/8] for bigger image */}
+					<div className="w-full md:w-1/2 flex justify-center md:justify-end mb-8 md:mb-0">
+						<div className="relative w-full max-w-xs sm:max-w-md md:max-w-xl aspect-[16/10] rounded-lg overflow-hidden bg-card shadow-lg">
 							<Image
 								src={headerImage}
 								alt="Abstract code background"
-								layout="fill"
-								objectFit="cover"
+								fill
+								style={{ objectFit: "cover" }}
 								data-ai-hint="abstract code"
 								priority
 							/>
-							{/* Optional overlay */}
 							<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
 						</div>
 					</div>
 
 					{/* Text Content */}
 					<div className="w-full md:w-1/2 text-center md:text-left">
-						<h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-12 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-600 to-blue-800">
+						<h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 md:mb-12 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-600 to-blue-800">
 							Automação Inteligente para Impulsionar Seu{" "}
 							<AnimatedWord
 								words={[
@@ -132,31 +132,31 @@ const HeaderSection: React.FC = () => {
 								interval={3000}
 							/>
 						</h1>
-						<p className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-xl mx-auto md:mx-0 leading-relaxed">
+						<p className="text-base xs:text-lg sm:text-xl md:text-2xl text-muted-foreground mb-4 md:mb-6 max-w-xs xs:max-w-sm sm:max-w-xl mx-auto md:mx-0 leading-relaxed">
 							Desenvolvendo soluções personalizadas com IA para otimizar seus processos e aumentar a eficiência.
 						</p>
 					</div>
 				</div>
 
 				{/* Centralized Button */}
-				<div className="w-full flex justify-center mt-0 mb-16">
+				<div className="w-full flex justify-center mt-0 mb-10 md:mb-16">
 					<Button
 						size="lg"
-						className="relative text-blue-500 border border-blue-500 px-8 py-4 rounded-full text-lg font-semibold tracking-wide transition-all duration-300 hover:text-blue-700 hover:shadow-[0_0_10px_rgba(59,130,246,0.5)] group bg-transparent"
+						className="relative text-blue-500 border border-blue-500 px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold tracking-wide transition-all duration-300 hover:text-blue-700 hover:shadow-[0_0_10px_rgba(59,130,246,0.5)] group bg-transparent"
 						onClick={handleScrollToProjects}
 						aria-label="See my projects"
 					>
-						<span className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-blue-500 transition-all duration-300"></span> {/* Animated border */}
+						<span className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-blue-500 transition-all duration-300"></span>
 						<span className="relative z-10 group-hover:scale-105 transition-transform duration-300">Portfólio</span>
 					</Button>
 				</div>
 			</header>
-			<div className="w-full h-[3px] bg-gradient-to-r from-transparent via-blue-500 to-transparent blur-[1px] opacity-100"></div> {/* Consistent divider with soft glow */}
+			<div className="w-full h-[2px] sm:h-[3px] bg-gradient-to-r from-transparent via-blue-500 to-transparent blur-[1px] opacity-100"></div>
 
-			<DifferentialsSection className="mb-24" /> {/* Consistent bottom margin */}
-			<div className="w-full h-[3px] bg-gradient-to-r from-transparent via-blue-500 to-transparent blur-[1px] opacity-100"></div>
-			<MethodologyTimeline stages={methodologyStages} className="mb-24" /> {/* Consistent bottom margin */}
-			<div className="w-full h-[3px] bg-gradient-to-r from-transparent via-blue-500 to-transparent blur-[1px] opacity-100"></div>
+			<DifferentialsSection className="mb-16 sm:mb-24" />
+			<div className="w-full h-[2px] sm:h-[3px] bg-gradient-to-r from-transparent via-blue-500 to-transparent blur-[1px] opacity-100"></div>
+			<MethodologyTimeline stages={methodologyStages} className="mb-16 sm:mb-24" />
+			<div className="w-full h-[2px] sm:h-[3px] bg-gradient-to-r from-transparent via-blue-500 to-transparent blur-[1px] opacity-100"></div>
 		</>
 	);
 };
