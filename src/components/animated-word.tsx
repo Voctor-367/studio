@@ -81,8 +81,8 @@ const AnimatedWord: React.FC<AnimatedWordProps> = ({ words, interval = 2000, glo
             color: "#edf3f7",
             textShadow:
               glow === "soft"
-                ? "0 0 1.5px #fff, 0 0 2.5px #fff"
-                : "0 0 2px #fff, 0 0 4px #fff",
+                ? "0 0 0.2px #fff, 0 0 2.5px #fff"
+                : "0 0 0.4 #fff, 0 0 4px #fff",
             filter: animating ? "brightness(1.2)" : undefined,
             transition: "filter 0.2s",
           }}

@@ -16,31 +16,31 @@ const methodologyStages = [
 	{
 		id: 1,
 		icon: RiListCheck3,
-		title: 'Discovery & Planning',
+		title: 'Análise e Planejamento',
 		description: 'Análise dos processos e pontos de automação, definindo requisitos específicos e métricas de sucesso para a solução.',
 	},
 	{
 		id: 2,
 		icon: MdOutlineDesignServices,
-		title: 'Design & Prototyping',
-		description: 'Arquitetura do fluxo conversacional com definição de intents, entidades e contextos. Desenvolvimento de prompts eficientes para LLMs e criação de protótipos funcionais para validação rápida.',
+		title: 'Concepção e Prototipagem',
+		description: 'Arquitetura do fluxo conversacional com definição de entidades e contextos e criação de protótipos funcionais para validação rápida.',
 	},
 	{
 		id: 3,
 		icon: RiCodeBoxLine,
-		title: 'Development & Integration',
-		description: 'Implementação das integrações com APIs, sistemas (ex: CRM) e canais de comunicação. Desenvolvimento de mecanismos de fallback para lidar com exceções ou respostas inesperadas de APIs/LLMs e garantir a resiliência.',
+		title: 'Construção e Integração',
+		description: 'Integrações com APIs, sistemas (ex: CRM) e canais de comunicação. Desenvolvimento de mecanismos de fallback para lidar com exceções ou respostas inesperadas de APIs/LLMs.',
 	},
 	{
 		id: 4,
 		icon: RiTestTubeLine,
-		title: 'Testing & QA',
-		description: 'Validação extensiva do agente com cenários reais de uso, testes de robustez para identificar edge cases conversacionais e testes de carga da arquitetura para garantir disponibilidade e performance do serviço',
+		title: 'Testes',
+		description: 'Validação com cenários reais de uso, testes de robustez para identificar edge cases conversacionais e testes de carga da arquitetura.',
 	},
 	{
 		id: 5,
 		icon: RiEyeLine,
-		title: 'Deployment & Observability',
+		title: 'Implantação e Monitoramento',
 		description: 'Implantação da solução em ambiente de produção com monitoramento contínuo e análise de interações para identificar oportunidades de melhoria',
 	},
 ];
@@ -60,8 +60,17 @@ const HeaderSection: React.FC = () => {
 
 	return (
 		<>
+			<style>
+				{`
+					@media (min-width: 1024px) {
+						.header-bg {
+							background-size: 45% !important;
+						}
+					}
+				`}
+			</style>
 			<header
-				className="min-h-screen flex flex-col bg-cover bg-center text-foreground mb-0"
+				className="header-bg min-h-screen flex flex-col bg-cover bg-center text-foreground mb-0"
 				style={{ backgroundImage: `url(${dottedTexture.src})` }}
 			>
 				{/* Navigation Bar */}
