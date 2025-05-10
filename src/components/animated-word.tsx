@@ -8,6 +8,7 @@ interface AnimatedWordItem {
 interface AnimatedWordProps {
   words: (string | AnimatedWordItem)[];
   interval?: number;
+  glow?: "default" | "soft";
 }
 
 const HACK_CHARS = "█▓▒░▌▐▄▀▲△●○◆".split("");
@@ -25,7 +26,7 @@ function getWord(item: string | AnimatedWordItem): string {
   return typeof item === "string" ? item : item.text;
 }
 
-const AnimatedWord: React.FC<AnimatedWordProps> = ({ words, interval = 2000 }) => {
+const AnimatedWord: React.FC<AnimatedWordProps> = ({ words, interval = 2000, glow = "default" }) => {
   const [index, setIndex] = useState(0);
   const [display, setDisplay] = useState(getWord(words[0]));
   const [animating, setAnimating] = useState(false);
@@ -79,7 +80,9 @@ const AnimatedWord: React.FC<AnimatedWordProps> = ({ words, interval = 2000 }) =
           style={{
             color: "#edf3f7",
             textShadow:
-              "0 0 2px #fff, 0 0 4px #fff",
+              glow === "soft"
+                ? "0 0 1.5px #fff, 0 0 2.5px #fff"
+                : "0 0 2px #fff, 0 0 4px #fff",
             filter: animating ? "brightness(1.2)" : undefined,
             transition: "filter 0.2s",
           }}

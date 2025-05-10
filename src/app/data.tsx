@@ -18,17 +18,17 @@ export const projects: Project[] = [
     imageUrl: BioLitExplorerImage.src, // Use imported image
     imageAlt: 'E-commerce Platform online store',
     link: 'https://github.com/Voctor-367/BioLitExplorer.git',
-    description: 'Um co-piloto de pesquisa movido por IA que impulsiona a descoberta biomédica. O BioLit Explorer integra de forma inteligente a análise interativa de dados experimentais com a exploração profunda e contextualizada da literatura científica, permitindo que pesquisadores formulem hipóteses robustas e acelerem seus avanços numa fração do tempo.',
+    description: 'Um co-piloto de pesquisa movido por IA que impulsiona a descoberta biomédica. O BioLit Explorer integra de forma inteligente a análise interativa de dados experimentais com a exploração da literatura científica, permitindo que pesquisadores formulem hipóteses robustas e acelerem seus avanços numa fração do tempo.',
     features: [
-      'Interface Conversacional Integrada: Interaja com agentes de IA especializados em análise de dados e exploração da literatura científica em um ambiente único e intuitivo.',
-      'Análise de Dados com IA Generativa: Faça perguntas em linguagem natural sobre seus datasets (CSV); a IA (GPT 4.1) executa código Python  para fornecer respostas, tabelas e visualizações gráficas.',
-      'Interpretação Multimodal de Gráficos: Capacidade de analisar imagens de gráficos (ex: plots de expressão, curvas de sobrevida) e, combinando essa informação visual com conhecimento de domínio, fornecer interpretações e insights relevantes.',
-      'Busca Contextualizada na Literatura (PubMed): Obtenha artigos científicos relevantes do PubMed, com buscas direcionadas pelos seus dados e objetivos de pesquisa.',
+      "Interface Conversacional Integrada: Interaja com IA's especializados em análise de dados e exploração da literatura científica em um ambiente único e intuitivo.",
+      'Análise de Dados com IA Generativa: Através de perguntas em linguagem natural sobre datasets (CSV) de estudos carregados, a IA (GPT 4.1) executa código Python  para fornecer respostas, tabelas e visualizações gráficas.',
+      'Interpretação Gráficos: Capacidade de analisar imagens de gráficos e, combinando essa informação visual com conhecimento de domínio, fornecer interpretações e insights relevantes.',
+      'Busca Contextualizada na Literatura Científica: Obtenção de artigos científicos relevantes do PubMed, com buscas direcionadas pelos seus dados e objetivos de pesquisa.',
       'Especialidade Fluida" para Análises: Coleta contexto inicial do usuário (objetivo, tipo de dados) para adaptar dinamicamente os prompts e as estratégias de análise, tornando a ferramenta poderosa para diversos estudos biomédicos.',
     ],
-    impacts: ['Acelera o ciclo da coleta de dados à formulação de hipóteses,  democratizando análises avançadas – incluindo a interpretação de gráficos – através da linguagem natural, capacitando assim uma gama mais ampla de cientistas.',
+    impacts: ['Acelera o ciclo da coleta de dados à formulação de hipóteses,  democratizando análises avançadas – incluindo a interpretação de gráficos – capacitando assim uma gama mais ampla de cientistas.',
       'Conecta rapidamente achados experimentais à literatura científica mais pertinente do PubMed, elevando a qualidade e profundidade dos insights, permitindo a identificação de padrões sutis, a validação de resultados e a descoberta de novas linhas de investigação que poderiam ser perdidas manualmente.', 
-      'Filtragem de um volume imenso de publicações científicas, reduzindo a sobrecarga cognitiva e simplificando barreiras técnicas e temporais, onde mais hipóteses disruptivas podem ser exploradas e descobertas.',
+      'Filtragem de um grande volume de publicações científicas, reduzindo a sobrecarga cognitiva e simplificando barreiras técnicas e temporais, onde mais hipóteses disruptivas podem ser exploradas e descobertas.',
     ],
     techStack: [
       { name: 'Python', icon: IoLogoPython },
@@ -59,7 +59,6 @@ export const projects: Project[] = [
     impacts: [
       'Para Clientes: Simplifica um processo de decisão tipicamente complexo e demorado. O cliente recebe orientação personalizada instantânea (24/7), respostas precisas às suas dúvidas e recomendações alinhadas ao seu perfil, resultando em maior confiança e satisfação na escolha do consórcio ideal',
       'Para o Negócio (Administradoras): Libera consultores humanos para focarem em vendas complexas e relacionamento, enquanto a IA qualifica leads e responde a perguntas frequentes. Isso aumenta a eficiência operacional, acelera o ciclo de vendas e eleva as taxas de conversão.',
-      'Potencial no Setor de Consórcios: A capacidade da IA de analisar perfis, comparar planos complexos e fornecer informações precisas baseadas em documentos oficiais resolve gargalos específicos da indústria, oferecendo um potencial expressivo para otimizar a aquisição de clientes e a eficiência das vendas neste mercado.',
     ],
     techStack: [
       { name: 'N8N', icon: SiN8N },
@@ -79,12 +78,12 @@ export const projects: Project[] = [
     imageUrl: ElisImage.src, // Use imported image
     imageAlt: 'Elis - Intelligent Automation for Pharmaceutical Sales',
     link: '',
-    description: 'Elis é uma solução de automação desenvolvida para agilizar o ciclo de vendas B2B, aumentar a capacidade de processamento de pedidos e melhorar a acurácia das informações para distribuidoras e fabricantes de produtos farmacêuticos, com foco em otimizar o processo de cotação e fechamento de pedidos junto a seus clientes diretos: prescritores, farmácias e manipuladores. A Elis é projetada com a capacidade crucial de integração com sistemas ERP (Enterprise Resource Planning). Essa integração permite consultas de estoque em tempo real e a automatização de etapas subsequentes do processamento de pedidos, desde a verificação de disponibilidade até o encaminhamento para faturamento e logística.',
+    description: 'Elis é uma solução de automação desenvolvida para agilizar o ciclo de vendas B2B e aumentar a capacidade de processamento de pedidos para distribuidoras e fabricantes de produtos farmacêuticos, com foco em otimizar o processo de cotação e fechamento de pedidos junto a seus clientes diretos: prescritores, farmácias e manipuladores. A Elis é projetada com a capacidade crucial de integração com sistemas ERP (Enterprise Resource Planning), o que permite consultas de estoque em tempo real e a automatização de etapas subsequentes do processamento de pedidos.',
     features: [
       'Integração com plataformas de mensagens (ChatWoot) e API do WhatsApp para comunicação.',
       'Recomendação Personalizada e Oportuna (UpSell Estratégico): O agente de IA avalia o contexto da conversa, os produtos de interesse do cliente e as regras de negócio pré-definidas, e com base nessa análise, a IA identifica e oferece, no momento certo da interação, produtos complementares relevantes, apresentações com melhor custo-benefício (ex: embalagens maiores), ou alternativas de maior valor agregado.',
       'Follow-Up Automatizado: Identifica oportunidades e realiza acompanhamento proativo para fechar pedidos no mesmo dia, garantindo que nenhuma solicitação seja perdida.',
-      'Análise de Comportamento: Utiliza IA (DeepSeek) para analisar o comportamento do atendente e acionar suporte humano quando necessário.',
+      'Análise de Comportamento: Utiliza IA (DeepSeek) para analisar o comportamento da Elis e acionar suporte humano quando necessário.',
     ],
     impacts: [
       'Reduz o tempo médio de atendimento e o custo por interação, permitindo escalar a operação sem um aumento proporcional nos custos.',
@@ -111,13 +110,13 @@ export const projects: Project[] = [
     imageUrl: TutorReligiosoImage.src, // Use imported image
     imageAlt: 'AI Agent for Religious Tutoring',
     link: 'https://github.com/Voctor-367/BioLitExplorer.git',
-    description: 'Um Agente de IA construído como um assistente dedicado aos mentores do serviço de ensino religioso de uma igreja. O agente tem como objetivo otimizar o gerenciamento do ensino, automatizar tarefas administrativas, facilitar o acesso rápido e interativo a conteúdos bíblicos e fornecer insights sobre o progresso dos alunos.',
+    description: 'Um Agente de IA construído como um assistente dedicado aos mentores do serviço de ensino religioso em igrejas. O agente tem como objetivo otimizar o gerenciamento do ensino, automatizar tarefas administrativas, facilitar o acesso rápido e interativo a conteúdos bíblicos e fornecer insights sobre o progresso dos alunos.',
     features: [
-      'Lembretes Automatizados: Geração e envio programado de lembretes semanais aos alunos sobre leituras e atividades de estudo, ajudando a manter o engajamento e a disciplina no programa de ensino.',
+      'Lembretes Automatizados: Geração e envio programado de lembretes aos alunos sobre atividades, ajudando a manter o engajamento e a disciplina no programa de ensino.',
       'Recuperação de Informações: Utiliza Naive RAG para extrair respostas e informações relevantes diretamente de arquivos PDF (como materiais de estudo, comentários bíblicos) carregados no sistema. Isso permite que mentores e alunos obtenham rapidamente informações específicas.',
       'Suporte Interativo a Dúvidas: O agente responde a perguntas sobre passagens bíblicas, doutrinas e outros tópicos específicos do conteúdo estudado, agindo como uma primeira linha de suporte informativo.',
       'Geração de Relatórios de Desempenho: Consolida informações sobre a participação dos alunos, conclusão de tarefas ou outros indicadores de progresso e gera relatórios para o mentor.',
-      'Conexão com Planilhas e Bancos de Dados: Capacidade de se integrar com planilhas (ex: Google Sheets) ou bancos de dados para buscar informações dos estudos, alunos e para registrar dados de progresso/interações, centralizando informações e facilitando a gestão do mentor.',
+      'Conexão com Planilhas e Bancos de Dados: Capacidade de se integrar com planilhas (ex: Google Sheets) ou bancos de dados para buscar informações dos estudos, alunos e para registrar dados de progresso/interações.',
     ],
     impacts: [
       'Reduz significativamente o tempo gasto em tarefas administrativas e repetitivas (envio de lembretes, busca manual por informações em materiais extensos, compilação de dados de progresso).',

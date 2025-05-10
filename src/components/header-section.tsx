@@ -185,7 +185,7 @@ const HeaderSection: React.FC = () => {
 
 					{/* Text Content */}
 					<div className="w-full md:w-1/2 text-center md:text-left mt-16 sm:mt-8 md:mt-12">
-						<h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 md:mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-600 to-blue-800">
+						<h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-4xl font-extrabold mb-6 md:mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-600 to-blue-800">
 							Automação Inteligente para Impulsionar Seu{" "}
 							<AnimatedWord
 								words={[
@@ -196,16 +196,17 @@ const HeaderSection: React.FC = () => {
 									"Objetivo",
 								]}
 								interval={3000}
+								glow="soft"
 							/>
 						</h1>
-						<p className="text-base xs:text-lg sm:text-xl md:text-2xl text-muted-foreground mb-2 md:mb-6 max-w-xs xs:max-w-sm sm:max-w-xl mx-auto md:mx-0 leading-relaxed">
+						<p className="text-base xs:text-lg sm:text-xl md:text-xl lg:text-lg text-muted-foreground mb-2 md:mb-6 max-w-xs xs:max-w-sm sm:max-w-xl mx-auto md:mx-0 leading-relaxed">
 							Desenvolvendo soluções personalizadas com IA para otimizar processos e aumentar a eficiência.
 						</p>
 					</div>
 				</div>
 
 				{/* Centralized Button */}
-				<div className="w-full flex justify-center mt-16 sm:mt-10 md:mt-14 mb-16 md:mb-8">
+				<div className="w-full flex justify-center mt-16 sm:mt-10 md:mt-14 mb-16 md:mb-16 lg:mb-24">
 					<Button
 						size="lg"
 						className="relative text-blue-500 border border-blue-500 px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold tracking-wide transition-all duration-300 hover:text-blue-700 hover:shadow-[0_0_10px_rgba(59,130,246,0.5)] group bg-transparent"

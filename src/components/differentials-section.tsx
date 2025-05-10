@@ -27,7 +27,7 @@ const differentialsData = [
 	{
 		id: 4,
 		icon: <Puzzle />,
-		title: 'Alta Capacidade de Integração com Ferramentas e APIs',
+		title: 'Capacidade de Integração com Ferramentas e APIs',
 		description:
 			'Soluções que se integram com uma vasta gama de ferramentas e APIs, adaptando-se a um ecossistema tecnológico existente.',
 	},
@@ -37,7 +37,7 @@ const DifferentialsSection: React.FC<{ className?: string }> = ({ className }) =
 	return (
 		<section className={`w-full pt-8 pb-12 ${className}`}>
 			<div className="container mx-auto px-4 sm:px-8 md:px-32">
-				<h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-blue-500 to-blue-900 mt-12 sm:mt-12 mb-4 sm:mb-4 text-center">
+				<h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-blue-500 to-blue-900 mt-12 sm:mt-12 mb-4 sm:mb-4 text-center">
 					ABORDAGENS FUNDAMENTAIS
 				</h2>
 				<p className="text-base sm:text-lg md:text-xl text-muted-foreground text-center mb-20 sm:mb-16 leading-relaxed">

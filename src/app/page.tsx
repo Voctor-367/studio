@@ -16,10 +16,10 @@ export default function Home() {
 
       {/* Removed the explicit "My Projects" heading section */}
       <main id="projects-section" className="container mx-auto px-4 py-12 md:py-20">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-blue-500 to-blue-800 mt-6 mb-2 sm:mb-4 text-center">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-blue-500 to-blue-800 mt-6 mb-2 sm:mb-4 text-center">
           PORTFÓLIO
         </h2>
-        <p className="text-base sm:text-lg md:text-xl text-muted-foreground text-center mb-20 sm:mb-20 leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl text-muted-foreground text-center mb-20 sm:mb-12 leading-relaxed">
         Soluções construídas para múltiplos setores e desafios.
         </p>
         <div className="space-y-20"> {/* Increased spacing between projects */}

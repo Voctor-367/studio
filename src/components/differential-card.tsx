@@ -32,10 +32,8 @@ const DifferentialCard: React.FC<DifferentialCardProps> = ({
   return (
     <div
       className={cn(
-        // Padding bem visível e responsivo: pequeno no mobile, médio no xs/sm, grande no md+
-        "relative flex flex-row items-center rounded-2xl overflow-hidden shadow-[0_8px_32px_rgba(20,40,120,0.25)] bg-[#0a1224] px-8 py-3 xs:px-6 xs:py-4 md:px-10 md:py-6 min-h-[140px] sm:min-h-[190px] mx-4 sm:mx-auto max-w-full sm:max-w-[480px] border-t-4 border-t-[#2c83c9]",
+        "relative flex flex-col rounded-2xl overflow-hidden shadow-[0_8px_32px_rgba(20,40,120,0.25)] bg-[#0a1224] px-5 py-4 xs:px-6 xs:py-5 md:px-8 md:py-6 min-h-[140px] sm:min-h-[190px] mx-2 sm:mx-auto max-w-full sm:max-w-[480px] border-t-4 border-t-[#2c83c9]",
         "transition-all duration-300 ease-in-out hover:shadow-[0_12px_40px_rgba(40,100,220,0.35)] hover:scale-[1.02]",
-        "gap-0 sm:gap-0", // remove any gap between columns
         className
       )}
     >
@@ -54,19 +52,21 @@ const DifferentialCard: React.FC<DifferentialCardProps> = ({
         }}
         aria-hidden="true"
       />
-      {/* Icon Column */}
-      <div className="relative flex items-center justify-center flex-shrink-0 min-w-[48px] w-[48px] h-[48px] sm:min-w-[64px] sm:w-[64px] sm:h-[64px] mr-10 sm:mr-6 md:mr-8 z-10">
-        <div className="relative z-10 flex items-center justify-center w-[48px] h-[48px] sm:w-[64px] sm:h-[64px] rounded-xl">
+      {/* Title + Icon Row */}
+      <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+        <span className="flex items-center justify-center flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-xl bg-[#112244]/60">
           {React.cloneElement(icon as React.ReactElement, {
-            className: "w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12",
+            className: "w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10",
           })}
-        </div>
+        </span>
+        <h3 className="text-sm sm:text-base md:text-lg font-bold text-white leading-tight">
+          {title}
+        </h3>
       </div>
-      {/* Text Column */}
-      <div className="flex flex-col justify-center text-left flex-1 min-w-0 z-10 pl-0">
-        <h3 className="text-xs sm:text-sm md:text-md font-bold text-white mb-1 leading-tight mb-2">{title}</h3>
-        <p className="text-[11px] sm:text-xs md:text-sm text-gray-300 leading-relaxed text-justify">{description}</p>
-      </div>
+      {/* Description */}
+      <p className="text-[12px] sm:text-xs md:text-sm text-gray-300 leading-relaxed">
+        {description}
+      </p>
     </div>
   );
 };
