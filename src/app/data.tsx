@@ -52,7 +52,7 @@ export const projects: Project[] = [
       'Coleta informações do perfil do cliente de forma conversacional e natural (via WhatsApp/outros).',
       'Responde perguntas específicas sobre regras, taxas e processos utilizando a documentação oficial dos planos como fonte (via RAG por ranqueamento semântico e filtragem por metadados)',
       'Analisa o perfil do cliente e compara com os planos disponíveis (filtrados por regras de negócio) para sugerir a opção mais adequada.',
-      'Sistema composto por agentes especializados (diálogo, extração, análise, resposta), facilitando manutenção e evolução.',
+      'Sistema composto por Multi-Agentes especializados (diálogo, extração de dados, análise, resposta), facilitando manutenção e evolução.',
       'Permite uma transição suave para atendimento humano em casos complexos ou a pedido, utilizando integração com CRM para fornecer contexto completo ao agente humano. ',
       'Permite incluir módulos como follow-ups inteligentes em conversas pausadas e ações focadas em aumentar o valor do ciclo de vida do cliente (LTV).',
     ],
@@ -77,18 +77,18 @@ export const projects: Project[] = [
     title: 'Elis - Automação Inteligente para Atendimento Farmacêutico',
     imageUrl: ElisImage.src, // Use imported image
     imageAlt: 'Elis - Intelligent Automation for Pharmaceutical Sales',
-    link: '',
+    link: 'https://webhook.admissaorenascer.space/webhook/31e2cfc7-964f-4d23-a01d-fc7aa12c33d6/chat',
     description: 'Elis é uma solução de automação desenvolvida para agilizar o ciclo de vendas B2B e aumentar a capacidade de processamento de pedidos para distribuidoras e fabricantes de produtos farmacêuticos, com foco em otimizar o processo de cotação e fechamento de pedidos junto a seus clientes diretos: prescritores, farmácias e manipuladores. A Elis é projetada com a capacidade crucial de integração com sistemas ERP (Enterprise Resource Planning), o que permite consultas de estoque em tempo real e a automatização de etapas subsequentes do processamento de pedidos.',
     features: [
       'Integração com plataformas de mensagens (ChatWoot) e API do WhatsApp para comunicação.',
-      'A ElisO agente de IA avalia o contexto da conversa, os produtos de interesse do cliente e as regras de negócio pré-definidas, e com base nessa análise, identifica e oferece, no momento certo da interação, produtos complementares relevantes, apresentações com melhor custo-benefício (ex: embalagens maiores), ou alternativas de maior valor agregado.',
-      'Identifica oportunidades e realiza acompanhamento proativo para fechar pedidos no mesmo dia, garantindo que nenhuma solicitação seja perdida.',
+      'A Elis avalia o contexto da conversa, os produtos de interesse do cliente e as regras de negócio pré-definidas para identificar e oferecer produtos complementares relevantes, apresentações com melhor custo-benefício (ex: embalagens maiores), ou alternativas de maior valor agregado.',
+      'Identifica oportunidades e realiza acompanhamento proativo (follow-up) para fechar pedidos no mesmo dia, garantindo que nenhuma solicitação seja perdida.',
       'Análise de comportamento da Elis com IA para acionar suporte humano quando necessário.',
     ],
     impacts: [
       'Reduz o tempo médio de atendimento e o custo por interação, permitindo escalar a operação sem um aumento proporcional nos custos.',
       'Automatiza o atendimento de um alto volume de consultas e pedidos rotineiros, liberando a equipe humana para focar em negociações complexas, relacionamento estratégico e resolução de problemas críticos.',
-      'Aumento das receitas através do upsell inteligente e contextual',
+      'Aumento das receitas através do UpSell inteligente e contextual',
       'Padrão de qualidade e informação em todas as interações automatizadas.',
     ],
     techStack: [
@@ -112,17 +112,15 @@ export const projects: Project[] = [
     link: 'https://github.com/Voctor-367/BioLitExplorer.git',
     description: 'Um Agente de IA construído como um assistente dedicado aos mentores do serviço de ensino religioso em igrejas. O agente tem como objetivo otimizar o gerenciamento do ensino, automatizar tarefas administrativas, facilitar o acesso rápido e interativo a conteúdos bíblicos e fornecer insights sobre o progresso dos alunos.',
     features: [
-      'Lembretes Automatizados: Geração e envio programado de lembretes aos alunos sobre atividades, ajudando a manter o engajamento e a disciplina no programa de ensino.',
-      'Recuperação de Informações: Utiliza Naive RAG para extrair respostas e informações relevantes diretamente de arquivos PDF (como materiais de estudo, comentários bíblicos) carregados no sistema. Isso permite que mentores e alunos obtenham rapidamente informações específicas.',
-      'Suporte Interativo a Dúvidas: O agente responde a perguntas sobre passagens bíblicas, doutrinas e outros tópicos específicos do conteúdo estudado, agindo como uma primeira linha de suporte informativo.',
-      'Geração de Relatórios de Desempenho: Consolida informações sobre a participação dos alunos, conclusão de tarefas ou outros indicadores de progresso e gera relatórios para o mentor.',
-      'Conexão com Planilhas e Bancos de Dados: Capacidade de se integrar com planilhas (ex: Google Sheets) ou bancos de dados para buscar informações dos estudos, alunos e para registrar dados de progresso/interações.',
+      'Geração e envio programado de lembretes aos alunos sobre atividades, ajudando a manter o engajamento e a disciplina no programa de ensino.',
+      'Utiliza Naive RAG para extrair respostas e informações relevantes diretamente de arquivos PDF (como materiais de estudo, comentários bíblicos) carregados no sistema.',
+      'Consolida informações sobre a participação dos alunos, conclusão de tarefas ou outros indicadores de progresso e gera relatórios para o mentor.',
+      'Capacidade de se integrar com planilhas (ex: Google Sheets) ou bancos de dados para buscar informações dos estudos, alunos e para registrar dados de progresso/interações.',
     ],
     impacts: [
       'Reduz significativamente o tempo gasto em tarefas administrativas e repetitivas (envio de lembretes, busca manual por informações em materiais extensos, compilação de dados de progresso).',
       'Recurso para consultas, especialmente útil para mentores que podem ter muitas demandas ou para alunos que precisam de esclarecimentos imediatos.',
       'Os relatórios de desempenho permitem que os mentores identifiquem rapidamente alunos que estão progredindo bem ou aqueles que podem estar enfrentando dificuldades, possibilitando intervenções mais direcionadas e eficazes.',
-      'Funciona como uma ferramenta de apoio que capacita os mentores, especialmente aqueles com menos tempo disponível ou que gerenciam múltiplos grupos, a exercerem seu papel com maior eficácia e menor sobrecarga.',
     ],
     techStack: [
       { name: 'N8N', icon: SiN8N },
